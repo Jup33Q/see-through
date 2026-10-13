@@ -1,0 +1,100 @@
+{
+  "torch_ref": {
+    "sdxl_vae_decoder_s": 0.9962920409998333,
+    "sdxl_vae_encoder_s": 0.5728406250000262,
+    "trans_vae_decoder_s": 0.9799142920001032,
+    "trans_vae_encoder_s": 0.013870916998712346
+  },
+  "fp16_floor": {
+    "sdxl_vae_decoder": {
+      "max_abs_diff": 0.019378483295440674,
+      "psnr01_db": 64.74941093755488
+    },
+    "sdxl_vae_encoder": {
+      "max_abs_diff": 10.28673791885376,
+      "psnr01_db": 44.52253345717502
+    },
+    "trans_vae_decoder": {
+      "max_abs_diff": 0.006198480725288391,
+      "psnr01_db": 77.0118121189673
+    },
+    "trans_vae_encoder": {
+      "max_abs_diff": 17.078125,
+      "psnr01_db": Infinity
+    }
+  },
+  "coreml": {
+    "trans_vae_encoder": {
+      "ref_shape": [
+        1,
+        4,
+        160,
+        160
+      ],
+      "trace_s": 2.3172850608825684,
+      "convert_s": 0.2769660949707031,
+      "mlpackage_mb": 2.4,
+      "spec_type": "mlProgram",
+      "first_predict_s": 1.2367148399353027,
+      "coreml_forward_s": 0.005115208001370775,
+      "max_abs_diff": 12.74609375,
+      "psnr01_db": Infinity,
+      "psnr_dynamic_db": 96.43762561806952,
+      "ref_absmax": 17563.048828125
+    },
+    "trans_vae_decoder": {
+      "ref_shape": [
+        1,
+        4,
+        1280,
+        1280
+      ],
+      "trace_s": 27.975027799606323,
+      "convert_s": 6.626744031906128,
+      "mlpackage_mb": 208.9,
+      "spec_type": "mlProgram",
+      "first_predict_s": 4.221344947814941,
+      "coreml_forward_s": 0.37894733299981453,
+      "max_abs_diff": 0.13386693596839905,
+      "psnr01_db": 60.750686196565844,
+      "psnr_dynamic_db": 62.97001441576754,
+      "ref_absmax": 1.51300048828125
+    },
+    "sdxl_vae_encoder": {
+      "ref_shape": [
+        1,
+        8,
+        160,
+        160
+      ],
+      "trace_s": 52.77257204055786,
+      "convert_s": 1.6607227325439453,
+      "mlpackage_mb": 68.5,
+      "spec_type": "mlProgram",
+      "first_predict_s": 1.776770830154419,
+      "coreml_forward_s": 0.3781410830015375,
+      "max_abs_diff": 9.563231945037842,
+      "psnr01_db": 44.27638343524474,
+      "psnr_dynamic_db": 56.24728604545797,
+      "ref_absmax": 30.335737228393555
+    },
+    "sdxl_vae_decoder": {
+      "ref_shape": [
+        1,
+        3,
+        1280,
+        1280
+      ],
+      "trace_s": 96.95789909362793,
+      "convert_s": 2.0287420749664307,
+      "mlpackage_mb": 99.2,
+      "spec_type": "mlProgram",
+      "first_predict_s": 0.9114069938659668,
+      "coreml_forward_s": 0.43161245900046197,
+      "max_abs_diff": 0.01888337731361389,
+      "psnr01_db": 64.61285944562154,
+      "psnr_dynamic_db": 73.05342137979649,
+      "ref_absmax": 4.7438554763793945
+    }
+  }
+}

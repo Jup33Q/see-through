@@ -33,6 +33,17 @@ tmp/
 wandb/
 local_*
 
+# ── Spikes: 脚本/报告/指标入库，大二进制产物留本地 ────────────────
+!spikes/**/*.log
+spikes/**/*.mlpackage
+spikes/**/*.mlmodelc
+spikes/**/*.pt
+spikes/**/*.npy
+spikes/**/*.npz
+spikes/**/vendor/
+spikes/**/.build/
+spikes/**/*.o
+
 # ── Symlink (user creates locally: ln -sf common/assets assets) ──
 /assets
 # end of file

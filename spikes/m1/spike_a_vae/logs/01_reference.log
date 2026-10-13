@@ -1,0 +1,27 @@
+{
+  "torch_ref": {
+    "sdxl_vae_decoder_s": 0.9962920409998333,
+    "sdxl_vae_encoder_s": 0.5728406250000262,
+    "trans_vae_decoder_s": 0.9799142920001032,
+    "trans_vae_encoder_s": 0.013870916998712346
+  },
+  "fp16_floor": {
+    "sdxl_vae_decoder": {
+      "max_abs_diff": 0.019378483295440674,
+      "psnr01_db": 64.74941093755488
+    },
+    "sdxl_vae_encoder": {
+      "max_abs_diff": 10.28673791885376,
+      "psnr01_db": 44.52253345717502
+    },
+    "trans_vae_decoder": {
+      "max_abs_diff": 0.006198480725288391,
+      "psnr01_db": 77.0118121189673
+    },
+    "trans_vae_encoder": {
+      "max_abs_diff": 17.078125,
+      "psnr01_db": Infinity
+    }
+  }
+}
+reference tensors saved to /Users/jup33q/see-through/spikes/m1/spike_a_vae/data

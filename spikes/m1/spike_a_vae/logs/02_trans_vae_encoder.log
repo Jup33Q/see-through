@@ -1,0 +1,33 @@
+scikit-learn version 1.7.2 is not supported. Minimum required version: 0.17. Maximum required version: 1.5.1. Disabling scikit-learn conversion API.
+Torch version 2.14.1 has not been tested with coremltools. You may run into unexpected errors. Torch 2.7.0 is the most recent version that has been tested.
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/torch/jit/_trace.py:1006: FutureWarning: `torch.jit.trace` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/torch/jit/_trace.py:1145: FutureWarning: `torch.jit.trace_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/60 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  98%|█████████▊| 59/60 [00:00<00:00, 10136.98 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 2997.22 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/mil/passes/defs/preprocess.py:273: UserWarning: Output, '90', of the source model, has been renamed to 'var_90' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 1665.67 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 3813.29 passes/s]
+[trans_vae_encoder] OK max_abs=12.74609 psnr01=infdB fwd=5.1ms
+{
+  "trans_vae_encoder": {
+    "ref_shape": [
+      1,
+      4,
+      160,
+      160
+    ],
+    "trace_s": 2.3172850608825684,
+    "convert_s": 0.2769660949707031,
+    "mlpackage_mb": 2.4,
+    "spec_type": "mlProgram",
+    "first_predict_s": 1.2367148399353027,
+    "coreml_forward_s": 0.005115208001370775,
+    "max_abs_diff": 12.74609375,
+    "psnr01_db": Infinity,
+    "psnr_dynamic_db": 96.43762561806952,
+    "ref_absmax": 17563.048828125
+  }
+}

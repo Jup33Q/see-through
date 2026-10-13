@@ -1,0 +1,11 @@
+{
+  "tag": "head11_160",
+  "frames": 11,
+  "group": 1,
+  "size": 160,
+  "device": "mps",
+  "dtype": "float32",
+  "forward_sec": 16.22671604156494,
+  "out_mean": -0.005682745017111301,
+  "out_std": 0.9975719451904297
+}

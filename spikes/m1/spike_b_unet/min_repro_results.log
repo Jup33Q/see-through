@@ -1,0 +1,24 @@
+=== sdpa: OK @ 18:50:00
+trace+convert+predict ok; max_abs=6.764e-05 mean_abs=8.030e-06
+=== group_embedding: OK @ 18:50:19
+3D-input trace+convert+predict ok; max_abs=1.875e-03
+=== transformer3d_midblock_attn0: FAIL @ 18:52:24
+Traceback (most recent call last):
+  File "/Users/jup33q/see-through/spikes/m1/spike_b_unet/min_repro.py", line 133, in probe_t3d
+    pred = ml.predict({"hidden_states": hs.numpy(), "encoder_hidden_states": ehs.numpy()})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/models/model.py", line 842, in predict
+    return self._get_predictions(self.__proxy__,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/models/model.py", line 890, in _get_predictions
+    preprocess_method(data)
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/models/model.py", line 830, in verify_and_convert_input_dict
+    self._verify_input_dict(d)
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/models/model.py", line 1017, in _verify_input_dict
+    self._verify_input_name_exists(input_dict)
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/models/model.py", line 1060, in _verify_input_name_exists
+    raise KeyError(err_msg.format(given_input, self._model_input_names_set))
+KeyError: 'Provided key "hidden_states", in the input dict, does not match any of the model input name(s), which are: {\'hidden_states_1\', \'encoder_hidden_states\'}'
+
+=== transformer3d_midblock_attn0: OK @ 18:54:50
+trace 81.9s, convert 9.8s; max_abs=7.210e-02 mean_abs=3.288e-03

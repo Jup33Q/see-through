@@ -151,7 +151,7 @@ CUDA 硬编码点（MPS 移植面，约 10 行）：
 | 阶段 | 状态 | 日期 | 备注 |
 |---|---|---|---|
 | M0 基线部署+golden | ✅ | 2026-10-13 | MPS bf16 端到端跑通。基线(M5 Max):总耗时 580s(layerdiff body 4m16s / head 4m22s / marigold 35s / 后处理+PSD 5s),峰值 RSS 23.6 GiB,peak footprint 51 GB。PSD 17 层(test_image 实际非空部件数;23 为全 tag 上限,headwear/earwear/neckwear/tail/wings/objects 为空被丢弃,head 为中间产物),psd-tools 打开+composite 验证通过。golden 冻结于 `tests/golden/test_image/`(54 文件 20 MB,已入 git)。环境:conda `see_through` py3.12,torch 2.14.1;scipy 升 1.18.1(1.15.3 wheel 与 macOS 27 不兼容);requirements 中 timm/convnext_perceptual_loss 两个 git pin 与推理无关且 GitHub 直连不可达,跳过(未装)。改动:`--device/--dtype` 参数 + cuda guard,见 M0 任务 2 |
-| M1 可行性 spike + 决策门 | ⬜ | | 路线：未定 |
+| M1 可行性 spike + 决策门 | ✅ | 2026-10-13 | **决策门：路线 A（全 CoreML）**。Spike A：SDXL VAE enc/dec + TransparentVAE enc/dec 4/4 转换成功，PSNR 44.3–64.6 dB（门限 35），全部贴 fp16 底噪。Spike B：UNetFrameConditionModel（4.07B）零修改 trace→convert 全链路通过，body13/head11 两档 @latent 160² 编译落盘（各 7.6 GB mlpackage），对齐 PSNR≈82 dB，稳态前向 5.1s/4.3s（vs MPS fp32 19.3s/16.2s，同机并行下约 3.8×）；SDPA 被 coremltools 9.0 原生映射，三个风险点（frame reshape/Transformer3D/GroupEmbedding）最小复现全过。遗留：ANE 落盘率 0%（4754 算子全落 GPU），上 ANE 需拆 attention+量化，留作后续 spike；group_index 为 Python 分支致两档包权重 99% 重复，M3 可改张量入参合并。Spike C（兜底验证）：mlx-swift 跑通 SDXL 级 UNet 前向（1.99B 参数 fp16 简化版 @latent 160²，稳态 0.264s，GPU peak 5.7 GB），跨帧 reshape/CrossFrameAttention/GroupEmbedding 三个自定义块逐一验证可实现，兜底路线 B 成立（本阶段未启用）。坑：GitHub 不可达→SwiftPM 依赖从本机缓存 vendor 化；metal 编译器需 DEVELOPER_DIR 指向 Xcode。脚本/报告入 git（`spikes/m1/`），mlpackage/npz/vendor 大二进制留本地不入库（见 .gitignore）。 |
 | M2 静态化+小件 CoreML | ⬜ | | |
 | M3 LayerDiff3D UNet | ⬜ | | |
 | M4 Marigold UNet | ⬜ | | |

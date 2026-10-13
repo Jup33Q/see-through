@@ -1,0 +1,11 @@
+{
+  "tag": "smoke13_64",
+  "frames": 13,
+  "group": 0,
+  "size": 64,
+  "device": "mps",
+  "dtype": "float32",
+  "forward_sec": 3.7555928230285645,
+  "out_mean": -0.005848435685038567,
+  "out_std": 1.0030549764633179
+}

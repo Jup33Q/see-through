@@ -1,0 +1,5 @@
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py:206: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory does not use symlinks anymore.
+  warnings.warn(
+[load] 4.4s, params=4.07B, rss=4.0GB
+[forward] 16.2s, out.shape=(1, 11, 4, 160, 160), rss=4.2GB
+{"tag": "head11_160", "frames": 11, "group": 1, "size": 160, "device": "mps", "dtype": "float32", "forward_sec": 16.22671604156494, "out_mean": -0.005682745017111301, "out_std": 0.9975719451904297}

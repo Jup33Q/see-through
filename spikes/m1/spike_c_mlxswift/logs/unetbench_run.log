@@ -1,0 +1,16 @@
+Building for debugging...
+[Using on-disk description]
+warning: missing creator for mutated node: ('/Users/jup33q/see-through/spikes/m1/spike_c_mlxswift/.build/out/Products/Debug/mlx-swift_Cmlx.bundle/Contents/MacOS')
+Build complete! (0.31秒)
+device: Device(gpu, 0) (MLX default; gpu expected)
+=== custom block feasibility checks ===
+cross-frame reshape: permute bijection maxErr=0.0 roundtrip==identity: true
+CrossFrameAttention: in [6, 256, 1280] -> out [6, 256, 1280] (frames mixed over F=3 axis)
+GroupEmbedding: [11,77,1280] -> [11, 77, 1280], [11,1280] -> [11, 1280]
+=== SDXL UNet forward (random weights, fp16) ===
+params: 1.99 B  init+materialize: 0.26s  weights(active): 3984.5 MB
+warmup forward (incl. compile): 0.271s  out shape: [1, 160, 160, 4]  dtype: float16
+per-forward times: ["0.267", "0.276", "0.277", "0.278", "0.276"] s
+mean: 0.275s  best: 0.267s  batch=1 res=160x160
+GPU memory: active=3985.3 MB peak=5701.8 MB cache=5477.0 MB
+output finite: true

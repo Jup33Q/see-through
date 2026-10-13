@@ -1,0 +1,22 @@
+{
+  "tag": "head11_160",
+  "frames": 11,
+  "group": 1,
+  "size": 160,
+  "trace_ok": true,
+  "trace_vs_eager_max_abs": 1.1444091796875e-05,
+  "convert_ok": true,
+  "mlpackage": "/Users/jup33q/see-through/spikes/m1/spike_b_unet/unet_head11_160.mlpackage",
+  "mlpackage_size": "7.6G",
+  "predict_first_sec": 16.054285049438477,
+  "predict_times_sec": [
+    4.228718042373657,
+    4.293309211730957,
+    4.36043119430542
+  ],
+  "rss_gb": 42.076700672,
+  "max_abs": 0.0032215118408203125,
+  "mean_abs": 0.00028754325467161834,
+  "mse": 1.470117325652609e-07,
+  "psnr": 82.25985616786039
+}
