@@ -7,7 +7,7 @@ from modules.layerdiffuse.vae import TransparentVAE
 from modules.layerdiffuse.layerdiff3d import UNetFrameConditionModel
 from modules.marigold import MarigoldDepthPipeline
 from utils.cv import center_square_pad_resize, img_alpha_blending, smart_resize, validate_resolution
-from utils.torch_utils import seed_everything
+from utils.torch_utils import seed_everything, resolve_device_dtype
 from utils.io_utils import json2dict, dict2json, load_parts, save_tmp_img, load_part, save_psd
 from utils.torchcv import cluster_inpaint_part
 
@@ -27,9 +27,12 @@ VALID_BODY_PARTS_V2 = [
 
 layerdiff_pipeline: KDiffusionStableDiffusionXLPipeline = None
 def apply_layerdiff(
-    imgp: str, pretrained: str, num_inference_steps=30, seed=0, save_dir='workspace/layerdiff_output', target_tag_list=VALID_BODY_PARTS_V2, 
-    resolution=1280, vae_ckpt=None, unet_ckpt=None, disable_progressbar=False, cache_tag_embeds=True, group_offload=False):
-    
+    imgp: str, pretrained: str, num_inference_steps=30, seed=0, save_dir='workspace/layerdiff_output', target_tag_list=VALID_BODY_PARTS_V2,
+    resolution=1280, vae_ckpt=None, unet_ckpt=None, disable_progressbar=False, cache_tag_embeds=True, group_offload=False,
+    device=None, dtype=None):
+
+    device, dtype = resolve_device_dtype(device, dtype)
+
     global layerdiff_pipeline
     if layerdiff_pipeline is None:
         trans_vae = TransparentVAE.from_pretrained(pretrained, subfolder='trans_vae')
@@ -62,13 +65,13 @@ def apply_layerdiff(
                 layerdiff_pipeline.trans_vae.decoder.load_state_dict(td_sd)
                 print(f'load vae from {vae_ckpt}')
 
-        layerdiff_pipeline.vae.to(dtype=torch.bfloat16, device='cuda')
-        layerdiff_pipeline.trans_vae.to(dtype=torch.bfloat16, device='cuda')
-        layerdiff_pipeline.unet.to(dtype=torch.bfloat16, device='cuda')
-        layerdiff_pipeline.text_encoder.to(dtype=torch.bfloat16, device='cuda')
-        layerdiff_pipeline.text_encoder_2.to(dtype=torch.bfloat16, device='cuda')
+        layerdiff_pipeline.vae.to(dtype=dtype, device=device)
+        layerdiff_pipeline.trans_vae.to(dtype=dtype, device=device)
+        layerdiff_pipeline.unet.to(dtype=dtype, device=device)
+        layerdiff_pipeline.text_encoder.to(dtype=dtype, device=device)
+        layerdiff_pipeline.text_encoder_2.to(dtype=dtype, device=device)
         if group_offload:
-            layerdiff_pipeline.enable_group_offload('cuda', num_blocks_per_group=1)
+            layerdiff_pipeline.enable_group_offload(device, num_blocks_per_group=1)
 
     pipeline = layerdiff_pipeline
     if cache_tag_embeds:
@@ -187,15 +190,18 @@ def apply_layerdiff(
 
 marigold_pipeline: MarigoldDepthPipeline = None
 def apply_marigold(srcp, pretrained: str, num_inference_steps=-1, seed=0, save_dir='workspace/layerdiff_output', target_tag_list=VALID_BODY_PARTS_V2, \
-    resolution=768, normalize_depth=False, disable_progressbar=False, cache_tag_embeds=True, group_offload=False):
+    resolution=768, normalize_depth=False, disable_progressbar=False, cache_tag_embeds=True, group_offload=False, device=None, dtype=None):
+
+    device, dtype = resolve_device_dtype(device, dtype)
+
     global marigold_pipeline
     if marigold_pipeline is None:
         unet = UNetFrameConditionModel.from_pretrained(pretrained, subfolder='unet')
         marigold_pipeline = MarigoldDepthPipeline.from_pretrained(pretrained, unet=unet)
-        marigold_pipeline.to(device='cuda', dtype=torch.bfloat16)
+        marigold_pipeline.to(device=device, dtype=dtype)
 
         if group_offload:
-            marigold_pipeline.enable_group_offload('cuda', num_blocks_per_group=1)
+            marigold_pipeline.enable_group_offload(device, num_blocks_per_group=1)
 
     pipe = marigold_pipeline
 

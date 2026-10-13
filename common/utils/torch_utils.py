@@ -280,11 +280,29 @@ def get_torch_dtype(torch_dtype):
     return torch_dtype
 
 
+def resolve_device(device=None):
+    if device is None or device == 'auto':
+        if torch.cuda.is_available():
+            return 'cuda'
+        if torch.backends.mps.is_available():
+            return 'mps'
+        return 'cpu'
+    return device
+
+
+def resolve_device_dtype(device=None, dtype=None):
+    device = resolve_device(device)
+    if dtype is None or dtype == 'auto':
+        dtype = torch.float32 if device == 'cpu' else torch.bfloat16
+    return device, get_torch_dtype(dtype)
+
+
 def seed_everything(seed):
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
 
 
 def accelerate_should_save(accelerator):

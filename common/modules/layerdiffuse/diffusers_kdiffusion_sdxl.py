@@ -270,7 +270,8 @@ class KDiffusionStableDiffusionXLPipeline(StableDiffusionXLImg2ImgPipeline):
             # to supress some warning msg
             self.text_encoder = self.text_encoder_2 = torch.nn.Identity()
             gc.collect()
-            torch.cuda.empty_cache()
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
         
     
     def denoise_func(self, latents, add_text_embeds, add_time_ids, prompt_embeds, c_concat, num_inference_steps=50):

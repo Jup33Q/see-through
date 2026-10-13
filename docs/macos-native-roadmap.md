@@ -150,7 +150,7 @@ CUDA 硬编码点（MPS 移植面，约 10 行）：
 
 | 阶段 | 状态 | 日期 | 备注 |
 |---|---|---|---|
-| M0 基线部署+golden | ⬜ | | |
+| M0 基线部署+golden | ✅ | 2026-10-13 | MPS bf16 端到端跑通。基线(M5 Max):总耗时 580s(layerdiff body 4m16s / head 4m22s / marigold 35s / 后处理+PSD 5s),峰值 RSS 23.6 GiB,peak footprint 51 GB。PSD 17 层(test_image 实际非空部件数;23 为全 tag 上限,headwear/earwear/neckwear/tail/wings/objects 为空被丢弃,head 为中间产物),psd-tools 打开+composite 验证通过。golden 冻结于 `tests/golden/test_image/`(54 文件 20 MB,已入 git)。环境:conda `see_through` py3.12,torch 2.14.1;scipy 升 1.18.1(1.15.3 wheel 与 macOS 27 不兼容);requirements 中 timm/convnext_perceptual_loss 两个 git pin 与推理无关且 GitHub 直连不可达,跳过(未装)。改动:`--device/--dtype` 参数 + cuda guard,见 M0 任务 2 |
 | M1 可行性 spike + 决策门 | ⬜ | | 路线：未定 |
 | M2 静态化+小件 CoreML | ⬜ | | |
 | M3 LayerDiff3D UNet | ⬜ | | |
