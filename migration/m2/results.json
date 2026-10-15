@@ -1,0 +1,181 @@
+{
+  "modules": {
+    "sdxl_vae_decoder": {
+      "ref_shape": [
+        1,
+        3,
+        1280,
+        1280
+      ],
+      "ref_source": "../../../spikes/m1/spike_a_vae/data/sdxl_dec_out.npy",
+      "thresholds": {
+        "psnr01_db": 35.0,
+        "psnr_dynamic_db": 40.0,
+        "ssim": 0.99
+      },
+      "trace_s": 110.21,
+      "convert_s": 2.28,
+      "mlpackage_mb": 99.2,
+      "coreml_forward_s": 0.4489,
+      "align_all": {
+        "max_abs_diff": 0.01888337731361389,
+        "psnr01_db": 64.61285944562154,
+        "psnr_dynamic_db": 73.05342137979649,
+        "ssim": 0.9999944430988711
+      },
+      "align_cpu_and_neural_engine": {
+        "max_abs_diff": 0.48121196031570435,
+        "psnr01_db": 35.9476348967092,
+        "psnr_dynamic_db": 44.29939470965049,
+        "ssim": 0.9954520358114886
+      },
+      "ane_path_runnable": true,
+      "compute_plan": {
+        "total_ops": 995,
+        "preferred_device": {
+          "const_or_no_usage": 590,
+          "MLGPUComputeDevice": 405
+        }
+      },
+      "pass": true,
+      "checks": {
+        "psnr01_db": true,
+        "ssim": true,
+        "ane_psnr01_db": true,
+        "ane_ssim": true
+      }
+    },
+    "sdxl_vae_encoder": {
+      "ref_shape": [
+        1,
+        8,
+        160,
+        160
+      ],
+      "ref_source": "../../../spikes/m1/spike_a_vae/data/sdxl_enc_out.npy",
+      "thresholds": {
+        "psnr01_db": 35.0,
+        "psnr_dynamic_db": 40.0,
+        "ssim": 0.99
+      },
+      "trace_s": 52.29,
+      "convert_s": 1.61,
+      "mlpackage_mb": 68.5,
+      "coreml_forward_s": 0.3893,
+      "align_all": {
+        "max_abs_diff": 9.563231945037842,
+        "psnr01_db": 44.27638343524474,
+        "psnr_dynamic_db": 56.24728604545797
+      },
+      "align_cpu_and_neural_engine": {
+        "max_abs_diff": 18.953828811645508,
+        "psnr01_db": 33.05945303899064,
+        "psnr_dynamic_db": 41.85301818004075
+      },
+      "ane_path_runnable": true,
+      "compute_plan": {
+        "total_ops": 762,
+        "preferred_device": {
+          "const_or_no_usage": 457,
+          "MLGPUComputeDevice": 305
+        }
+      },
+      "pass": true,
+      "checks": {
+        "psnr_dynamic_db": true,
+        "ane_psnr_dynamic_db": true
+      }
+    },
+    "trans_vae_decoder": {
+      "ref_shape": [
+        1,
+        4,
+        1280,
+        1280
+      ],
+      "ref_source": "../../../spikes/m1/spike_a_vae/data/trans_dec_out.npy",
+      "thresholds": {
+        "psnr01_db": 35.0,
+        "psnr_dynamic_db": 40.0,
+        "ssim": 0.99
+      },
+      "trace_s": 30.31,
+      "convert_s": 6.69,
+      "mlpackage_mb": 208.9,
+      "coreml_forward_s": 0.3822,
+      "align_all": {
+        "max_abs_diff": 0.006041564047336578,
+        "psnr01_db": 78.05199610544913,
+        "psnr_dynamic_db": 79.32874736196771,
+        "ssim": 0.9999984520992626
+      },
+      "align_cpu_and_neural_engine": {
+        "max_abs_diff": 0.27438026666641235,
+        "psnr01_db": 47.91764879243488,
+        "psnr_dynamic_db": 49.57399011715551,
+        "ssim": 0.9994099409594608
+      },
+      "ane_path_runnable": true,
+      "compute_plan": {
+        "total_ops": 3706,
+        "preferred_device": {
+          "const_or_no_usage": 2203,
+          "MLGPUComputeDevice": 1503
+        }
+      },
+      "pass": true,
+      "checks": {
+        "psnr01_db": true,
+        "ssim": true,
+        "ane_psnr01_db": true,
+        "ane_ssim": true
+      }
+    },
+    "trans_vae_encoder": {
+      "ref_shape": [
+        1,
+        4,
+        160,
+        160
+      ],
+      "ref_source": "../../../spikes/m1/spike_a_vae/data/trans_enc_out.npy",
+      "thresholds": {
+        "psnr01_db": 35.0,
+        "psnr_dynamic_db": 40.0,
+        "ssim": 0.99
+      },
+      "trace_s": 2.63,
+      "convert_s": 0.25,
+      "mlpackage_mb": 2.4,
+      "coreml_forward_s": 0.0055,
+      "align_all": {
+        "max_abs_diff": 12.74609375,
+        "psnr01_db": Infinity,
+        "psnr_dynamic_db": 96.43762561806952
+      },
+      "align_cpu_and_neural_engine": {
+        "max_abs_diff": 417.0869140625,
+        "psnr01_db": Infinity,
+        "psnr_dynamic_db": 41.150062671411625
+      },
+      "ane_path_runnable": true,
+      "compute_plan": {
+        "total_ops": 84,
+        "preferred_device": {
+          "const_or_no_usage": 65,
+          "MLGPUComputeDevice": 19
+        }
+      },
+      "pass": true,
+      "checks": {
+        "psnr_dynamic_db": true,
+        "ane_psnr_dynamic_db": true
+      }
+    }
+  },
+  "thresholds": {
+    "psnr01_db": 35.0,
+    "psnr_dynamic_db": 40.0,
+    "ssim": 0.99
+  }
+}

@@ -44,6 +44,13 @@ spikes/**/vendor/
 spikes/**/.build/
 spikes/**/*.o
 
+# ── Migration: 脚本/报告/指标/embedding 包入库，大二进制产物留本地 ──
+!migration/**/*.log
+migration/**/*.mlpackage
+migration/**/*.mlmodelc
+migration/**/out/data/
+migration/**/*.pt
+
 # ── Symlink (user creates locally: ln -sf common/assets assets) ──
 /assets
 # end of file

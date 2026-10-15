@@ -1,0 +1,60 @@
+scikit-learn version 1.7.2 is not supported. Minimum required version: 0.17. Maximum required version: 1.5.1. Disabling scikit-learn conversion API.
+Torch version 2.14.1 has not been tested with coremltools. You may run into unexpected errors. Torch 2.7.0 is the most recent version that has been tested.
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/torch/jit/_trace.py:1006: FutureWarning: `torch.jit.trace` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/torch/jit/_trace.py:1145: FutureWarning: `torch.jit.trace_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/diffusers/models/upsampling.py:145: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  assert hidden_states.shape[1] == self.channels
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/diffusers/models/upsampling.py:160: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if hidden_states.shape[0] >= 64:
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/diffusers/models/upsampling.py:171: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if hidden_states.numel() * scale_factor > pow(2, 31):
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/368 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  43%|████▎     | 158/368 [00:00<00:00, 1565.89 ops/s]Converting PyTorch Frontend ==> MIL Ops: 100%|█████████▉| 367/368 [00:00<00:00, 2808.63 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 229.24 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/mil/passes/defs/preprocess.py:273: UserWarning: Output, '626', of the source model, has been renamed to 'var_626' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+Running MIL default pipeline:  27%|██▋       | 26/95 [00:00<00:00, 251.79 passes/s]Running MIL default pipeline:  55%|█████▍    | 52/95 [00:00<00:00, 194.06 passes/s]Running MIL default pipeline:  77%|███████▋  | 73/95 [00:01<00:00, 48.55 passes/s] Running MIL default pipeline:  97%|█████████▋| 92/95 [00:01<00:00, 63.60 passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:01<00:00, 72.91 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 311.03 passes/s]
+[sdxl_vae_decoder] psnr01=64.61dB dyn=73.05dB ssim=1.0000 plan={'const_or_no_usage': 590, 'MLGPUComputeDevice': 405} pass=True
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/torch/jit/_trace.py:1006: FutureWarning: `torch.jit.trace` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/torch/jit/_trace.py:1145: FutureWarning: `torch.jit.trace_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/diffusers/models/downsampling.py:134: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  assert hidden_states.shape[1] == self.channels
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/diffusers/models/downsampling.py:143: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  assert hidden_states.shape[1] == self.channels
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/296 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops: 100%|█████████▉| 295/296 [00:00<00:00, 7606.60 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 328.92 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/mil/passes/defs/preprocess.py:273: UserWarning: Output, '498', of the source model, has been renamed to 'var_498' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+Running MIL default pipeline:  36%|███▌      | 34/95 [00:00<00:00, 275.74 passes/s]Running MIL default pipeline:  65%|██████▌   | 62/95 [00:00<00:00, 70.91 passes/s] Running MIL default pipeline:  92%|█████████▏| 87/95 [00:00<00:00, 99.81 passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 102.07 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 420.00 passes/s]
+[sdxl_vae_encoder] psnr01=44.28dB dyn=56.25dB ssim=nan plan={'const_or_no_usage': 457, 'MLGPUComputeDevice': 305} pass=True
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/diffusers/models/upsampling.py:145: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  assert hidden_states.shape[1] == self.channels
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/diffusers/models/upsampling.py:160: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if hidden_states.shape[0] >= 64:
+/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/diffusers/models/upsampling.py:171: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if hidden_states.numel() * scale_factor > pow(2, 31):
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/1739 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  53%|█████▎    | 913/1739 [00:00<00:00, 9127.90 ops/s]Converting PyTorch Frontend ==> MIL Ops: 100%|█████████▉| 1738/1739 [00:00<00:00, 6340.42 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 65.52 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline:   7%|▋         | 7/95 [00:00<00:01, 66.80 passes/s]/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/mil/passes/defs/preprocess.py:273: UserWarning: Output, '2737', of the source model, has been renamed to 'var_2737' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+Running MIL default pipeline:  16%|█▌        | 15/95 [00:00<00:01, 69.76 passes/s]Running MIL default pipeline:  24%|██▍       | 23/95 [00:00<00:01, 67.73 passes/s]Running MIL default pipeline:  33%|███▎      | 31/95 [00:00<00:00, 72.02 passes/s]Running MIL default pipeline:  41%|████      | 39/95 [00:00<00:01, 46.88 passes/s]Running MIL default pipeline:  47%|████▋     | 45/95 [00:00<00:01, 48.94 passes/s]Running MIL default pipeline:  54%|█████▎    | 51/95 [00:00<00:00, 51.31 passes/s]Running MIL default pipeline:  60%|██████    | 57/95 [00:01<00:00, 40.34 passes/s]Running MIL default pipeline:  65%|██████▌   | 62/95 [00:02<00:03,  8.84 passes/s]Running MIL default pipeline:  69%|██████▉   | 66/95 [00:03<00:02,  9.89 passes/s]Running MIL default pipeline:  79%|███████▉  | 75/95 [00:03<00:01, 15.72 passes/s]Running MIL default pipeline:  87%|████████▋ | 83/95 [00:03<00:00, 21.55 passes/s]Running MIL default pipeline:  96%|█████████▌| 91/95 [00:03<00:00, 28.15 passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:03<00:00, 24.84 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline:  67%|██████▋   | 8/12 [00:00<00:00, 73.18 passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 73.73 passes/s]
+[trans_vae_decoder] psnr01=78.05dB dyn=79.33dB ssim=1.0000 plan={'const_or_no_usage': 2203, 'MLGPUComputeDevice': 1503} pass=True
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/60 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  98%|█████████▊| 59/60 [00:00<00:00, 13357.66 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 3765.08 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/mil/passes/defs/preprocess.py:273: UserWarning: Output, '90', of the source model, has been renamed to 'var_90' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 1702.21 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 3863.34 passes/s]
+[trans_vae_encoder] psnr01=infdB dyn=96.44dB ssim=nan plan={'const_or_no_usage': 65, 'MLGPUComputeDevice': 19} pass=True
+{
+  "sdxl_vae_decoder": true,
+  "sdxl_vae_encoder": true,
+  "trans_vae_decoder": true,
+  "trans_vae_encoder": true
+}

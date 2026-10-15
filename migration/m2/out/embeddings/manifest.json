@@ -1,0 +1,608 @@
+{
+  "format": "manifest.json + one .npy per tensor (npy headers carry shape/dtype)",
+  "stage": "M2 staticization",
+  "source": {
+    "layerdiff_snapshot": "/Users/jup33q/.cache/huggingface/hub/models--layerdifforg--seethroughv0.0.2_layerdiff3d/snapshots/4477e6ce529bc6a141732e1a55a4932176db3b89",
+    "marigold_snapshot": "/Users/jup33q/.cache/huggingface/hub/models--24yearsold--seethroughv0.0.1_marigold/snapshots/4f4ffc46050b6feb764b628859968a26e76e6b6a",
+    "compute_dtype": "torch.bfloat16",
+    "compute_device": "mps",
+    "storage_dtype": "float32 (exact upcast from bf16 compute; cast to app dtype at load)",
+    "encode_path": "KDiffusionStableDiffusionXLPipeline.encode_cropped_prompt_77tokens (diffusers_kdiffusion_sdxl.py:183-214) / MarigoldDepthPipeline.encode_empty_text (marigold_depth_pipeline.py:516)"
+  },
+  "layerdiff": {
+    "tag_version": "v3",
+    "body_tag_list": [
+      "front hair",
+      "back hair",
+      "head",
+      "neck",
+      "neckwear",
+      "topwear",
+      "handwear",
+      "bottomwear",
+      "legwear",
+      "footwear",
+      "tail",
+      "wings",
+      "objects"
+    ],
+    "head_tag_list": [
+      "headwear",
+      "face",
+      "irides",
+      "eyebrow",
+      "eyewhite",
+      "eyelash",
+      "eyewear",
+      "ears",
+      "earwear",
+      "nose",
+      "mouth"
+    ],
+    "negative_prompt": "",
+    "derived": {
+      "add_time_ids": [
+        1280,
+        1280,
+        0,
+        0,
+        1280,
+        1280
+      ],
+      "add_neg_time_ids": [
+        1280,
+        1280,
+        0,
+        0,
+        1280,
+        1280
+      ],
+      "resolution": 1280,
+      "guidance_scale": 1.0,
+      "num_inference_steps": 30,
+      "note": "add_time_ids = (h, w, 0, 0, h, w), deterministic from resolution; guidance_scale=1.0 disables CFG in the M0 golden run (do_classifier_free_guidance = scale > 1), negative embeddings are exported for M3+ flexibility."
+    },
+    "tensors": {
+      "front hair": {
+        "prompt_embeds": {
+          "file": "layerdiff/front_hair.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "d5a37a27e6b4fd59cc47b3e3f9887752"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/front_hair.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "0e785e44a90804455cd88596f1f5ebe7"
+        }
+      },
+      "back hair": {
+        "prompt_embeds": {
+          "file": "layerdiff/back_hair.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "841a55d18f38297e7a46259045018a56"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/back_hair.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "61c7d09ab9adc1c7142f0eeb89e41704"
+        }
+      },
+      "head": {
+        "prompt_embeds": {
+          "file": "layerdiff/head.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "043f0d00a37529f895c903e126047f93"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/head.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "9222370db12c5eb5b7653d288a3be9bf"
+        }
+      },
+      "neck": {
+        "prompt_embeds": {
+          "file": "layerdiff/neck.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "da79de62842259c2ca20278519ef7bf3"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/neck.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "c062b3b19e372793e8295c0815045526"
+        }
+      },
+      "neckwear": {
+        "prompt_embeds": {
+          "file": "layerdiff/neckwear.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "8717e04337d9cf5ef69cfd93d9588a4d"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/neckwear.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "af2ffcb1bb97c09804af02c473a86429"
+        }
+      },
+      "topwear": {
+        "prompt_embeds": {
+          "file": "layerdiff/topwear.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "245cc7ff811f0dd62380b01122f3b5f1"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/topwear.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "200ec60ff093028715903c424bae47c0"
+        }
+      },
+      "handwear": {
+        "prompt_embeds": {
+          "file": "layerdiff/handwear.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "8dc866f6193dc4ebfcd083c85eeb9ed4"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/handwear.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "0ed507eb240ee47244f6feb98a0ee7ee"
+        }
+      },
+      "bottomwear": {
+        "prompt_embeds": {
+          "file": "layerdiff/bottomwear.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "3d0f945473b2f115b86af56bd67021b3"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/bottomwear.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "42e58ae9ffa3371d478807fd9e1f5cc4"
+        }
+      },
+      "legwear": {
+        "prompt_embeds": {
+          "file": "layerdiff/legwear.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "c438eeed88ca72ebca6848e40fa5d60d"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/legwear.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "5b307b4edd080b5b9f77816976c02bd7"
+        }
+      },
+      "footwear": {
+        "prompt_embeds": {
+          "file": "layerdiff/footwear.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "3cfea52814943d217943f168475164ae"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/footwear.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "0cdf2271e57e5c2cbcfccaddaec2dbdb"
+        }
+      },
+      "tail": {
+        "prompt_embeds": {
+          "file": "layerdiff/tail.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "ed23572d9239b87b33dfbcc0167bd720"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/tail.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "0205a0a9c20a241eafaaa00774959f4c"
+        }
+      },
+      "wings": {
+        "prompt_embeds": {
+          "file": "layerdiff/wings.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "f802642ea3d23a612a82fa262a12bcfc"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/wings.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "49ca1001e6fab2de996ba1a89d58cdd7"
+        }
+      },
+      "objects": {
+        "prompt_embeds": {
+          "file": "layerdiff/objects.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "eca6d649615170e1b03783d7b3d69316"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/objects.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "187299ce4e55c185df6190fe1fc78aee"
+        }
+      },
+      "headwear": {
+        "prompt_embeds": {
+          "file": "layerdiff/headwear.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "97bc544b0e6d0b0e04a766dfb944f71a"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/headwear.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "a56bc37d69b249b9f62064931fdb0f1d"
+        }
+      },
+      "face": {
+        "prompt_embeds": {
+          "file": "layerdiff/face.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "5f0abec21fc19e51f7d6f1e469752fb8"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/face.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "ad0f0b39386bb600ada96dfe62656f54"
+        }
+      },
+      "irides": {
+        "prompt_embeds": {
+          "file": "layerdiff/irides.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "0b3fead1c6c9ff7c8f3dcf43187c1287"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/irides.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "93c9a28ebc371c8ce5be39f611584001"
+        }
+      },
+      "eyebrow": {
+        "prompt_embeds": {
+          "file": "layerdiff/eyebrow.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "bee3315e55244897169889e81746eae1"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/eyebrow.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "f18058c85873a41f7c6e8ffae0f18560"
+        }
+      },
+      "eyewhite": {
+        "prompt_embeds": {
+          "file": "layerdiff/eyewhite.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "9dbf5a756614468067edee2c2a9006b5"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/eyewhite.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "f31945b336a94357a84857e3d84d6ac4"
+        }
+      },
+      "eyelash": {
+        "prompt_embeds": {
+          "file": "layerdiff/eyelash.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "d201aca7856d5f8f341ef8a5d51f24e3"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/eyelash.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "a0cad4ebf8c49a17080fcc9e582d4818"
+        }
+      },
+      "eyewear": {
+        "prompt_embeds": {
+          "file": "layerdiff/eyewear.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "322b5d904eaa23d7e9ae7519d97af685"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/eyewear.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "1c77945a7b0e6d78d27f187761301f8f"
+        }
+      },
+      "ears": {
+        "prompt_embeds": {
+          "file": "layerdiff/ears.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "e507abd6af98b29b569b922f423689f9"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/ears.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "dfdd653063ea8fd5bf40c5b576d54cb9"
+        }
+      },
+      "earwear": {
+        "prompt_embeds": {
+          "file": "layerdiff/earwear.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "69f74ea2d41ce624697f5158a59e218f"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/earwear.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "305818ea461ac44e41c1b5204c06382e"
+        }
+      },
+      "nose": {
+        "prompt_embeds": {
+          "file": "layerdiff/nose.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "75ae596597b0fb6e216ccaf8bd42b0f7"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/nose.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "a5425c89d4b93e0f26cd892072017ef4"
+        }
+      },
+      "mouth": {
+        "prompt_embeds": {
+          "file": "layerdiff/mouth.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "543c60eacad198f921638877c9aaabd7"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/mouth.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "471817511f7b49b5bb8b7f0b6bf2fc04"
+        }
+      },
+      "": {
+        "prompt_embeds": {
+          "file": "layerdiff/__negative__.prompt_embeds.npy",
+          "shape": [
+            1,
+            77,
+            2048
+          ],
+          "dtype": "float32",
+          "md5": "86d1cd828171866322a152933404b450"
+        },
+        "pooled_prompt_embeds": {
+          "file": "layerdiff/__negative__.pooled_prompt_embeds.npy",
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32",
+          "md5": "0eb20cbf20fae1e2f028e9737d5d705e"
+        }
+      }
+    }
+  },
+  "marigold": {
+    "empty_text_embed": {
+      "file": "marigold/empty_text_embed.npy",
+      "shape": [
+        1,
+        2,
+        1024
+      ],
+      "dtype": "float32",
+      "md5": "9782bb2d80dbff0cc13871570032fb52"
+    },
+    "resolution": 768,
+    "scheduler": "DDIM, 4 steps",
+    "note": "MarigoldDepthPipeline.encode_empty_text; consumed as the only text condition."
+  }
+}
