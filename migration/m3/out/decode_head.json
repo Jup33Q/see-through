@@ -1,0 +1,73 @@
+{
+  "command" : "decode",
+  "pass" : true,
+  "pass_name" : "head",
+  "tags" : [
+    {
+      "exact" : false,
+      "max_abs" : 3,
+      "psnr_db" : 67.944533980654654,
+      "tag" : "headwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 70.42410793237265,
+      "tag" : "face"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 68.378485947836978,
+      "tag" : "irides"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 70.65273068813562,
+      "tag" : "eyebrow"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 3,
+      "psnr_db" : 65.847384097325246,
+      "tag" : "eyewhite"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 72.624280990608554,
+      "tag" : "eyelash"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 69.431027810224975,
+      "tag" : "eyewear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 69.540294032341862,
+      "tag" : "ears"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 68.894345545258787,
+      "tag" : "earwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 70.446639473541595,
+      "tag" : "nose"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 3,
+      "psnr_db" : 69.242183879035238,
+      "tag" : "mouth"
+    }
+  ]
+}

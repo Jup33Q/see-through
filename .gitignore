@@ -51,6 +51,13 @@ migration/**/*.mlmodelc
 migration/**/out/data/
 migration/**/*.pt
 
+# ── M3: 轨迹锚点/静态条件张量/Swift 构建产物留本地 ────────────────
+migration/m3/golden_trajectory/
+migration/m3/out/statics/
+migration/m3/out/decode_*/
+migration/m3/out/e2e_*/
+migration/m3/swift/.build/
+
 # ── Symlink (user creates locally: ln -sf common/assets assets) ──
 /assets
 # end of file

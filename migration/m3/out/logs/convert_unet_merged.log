@@ -1,0 +1,192 @@
+[19:52:21] unet loaded in 3.2s rss=16.8GB
+[19:52:21] statics[body]: ehs_cond(13, 77, 2048) text_aug(13, 1280)
+[19:52:21] statics[head]: ehs_cond(11, 77, 2048) text_aug(11, 1280)
+[19:54:59] eager[body]: max_abs=1.192e-05 psnr=134.13dB (158.1s cpu)
+[19:58:14] eager[head]: max_abs=1.144e-05 psnr=134.13dB (194.8s cpu)
+[20:22:27] TRACE OK in 1453.3s rss=27.5GB
+[20:22:31] traced graph saved: /Users/jup33q/see-through/migration/m3/out/traced_unet_merged.pt
+[20:22:32] coremltools 9.0
+[20:22:34] FAILED:
+Traceback (most recent call last):
+  File "/Users/jup33q/see-through/migration/m3/scripts/02_convert_unet_merged.py", line 234, in main
+    mlmodel = ct.convert(
+              ^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/_converters_entry.py", line 646, in convert
+    mlmodel = mil_convert(
+              ^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/converter.py", line 186, in mil_convert
+    return _mil_convert(
+           ^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/converter.py", line 218, in _mil_convert
+    proto, mil_program = mil_convert_to_proto(
+                         ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/converter.py", line 294, in mil_convert_to_proto
+    prog = frontend_converter(model, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/converter.py", line 106, in __call__
+    return load(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/load.py", line 87, in load
+    return _perform_torch_convert(converter, debug)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/load.py", line 150, in _perform_torch_convert
+    prog = converter.convert()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/converter.py", line 1392, in convert
+    convert_nodes(self.context, self.graph, early_exit=not has_states)
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 118, in convert_nodes
+    raise e     # re-raise exception
+    ^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 113, in convert_nodes
+    convert_single_node(context, node)
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 174, in convert_single_node
+    add_op(context, node)
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 6945, in repeat_interleave
+    result = repeat_interleave_dim0(x, repeats_val, node.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 6898, in repeat_interleave_dim0
+    x_tiled = mb.tile(x=x, reps=reps)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/mil/ops/registry.py", line 183, in add_op
+    return cls._add_op(op_cls_to_add, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/mil/builder.py", line 208, in _add_op
+    kwargs.update(cls._create_vars(
+                  ^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/mil/builder.py", line 185, in _create_vars
+    var = cls._add_const(val, new_var_name, before_op)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/mil/builder.py", line 122, in _add_const
+    raise ValueError(err_msg)
+ValueError: Cannot add const [None]
+
+[20:22:34] done pass=False
+[20:36:41] unet loaded in 3.1s rss=16.8GB
+[20:36:41] statics[body]: ehs_cond(13, 77, 2048) text_aug(13, 1280)
+[20:36:41] statics[head]: ehs_cond(11, 77, 2048) text_aug(11, 1280)
+[20:36:43] traced graph reloaded from /Users/jup33q/see-through/migration/m3/out/traced_unet_merged.pt
+[20:36:43] graph surgery: repeat_interleave -> expand (symbolic frames) OK
+[20:36:43] coremltools 9.0
+[20:36:46] FAILED:
+Traceback (most recent call last):
+  File "/Users/jup33q/see-through/migration/m3/scripts/02_convert_unet_merged.py", line 248, in main
+    mlmodel = ct.convert(
+              ^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/_converters_entry.py", line 646, in convert
+    mlmodel = mil_convert(
+              ^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/converter.py", line 186, in mil_convert
+    return _mil_convert(
+           ^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/converter.py", line 218, in _mil_convert
+    proto, mil_program = mil_convert_to_proto(
+                         ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/converter.py", line 294, in mil_convert_to_proto
+    prog = frontend_converter(model, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/converter.py", line 106, in __call__
+    return load(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/load.py", line 87, in load
+    return _perform_torch_convert(converter, debug)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/load.py", line 150, in _perform_torch_convert
+    prog = converter.convert()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/converter.py", line 1392, in convert
+    convert_nodes(self.context, self.graph, early_exit=not has_states)
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 118, in convert_nodes
+    raise e     # re-raise exception
+    ^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 113, in convert_nodes
+    convert_single_node(context, node)
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 174, in convert_single_node
+    add_op(context, node)
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 2874, in group_norm
+    result = _group_norm_impl(x, num_groups, weight, bias, eps)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 2828, in _group_norm_impl
+    x = mb.reshape(x=x, shape=new_shape)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/mil/ops/registry.py", line 183, in add_op
+    return cls._add_op(op_cls_to_add, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/mil/builder.py", line 208, in _add_op
+    kwargs.update(cls._create_vars(
+                  ^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/mil/builder.py", line 185, in _create_vars
+    var = cls._add_const(val, new_var_name, before_op)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/mil/builder.py", line 122, in _add_const
+    raise ValueError(err_msg)
+ValueError: Cannot add const [is0, np.int32(32), np.int32(10), 160, 160]
+Python native vals (list, tuple), np.array that are operation inputs cannot have symbolic values. Consider feeding symbolic shape in through placeholder and use mb.shape() operator. Input reshape_0_shape: [is0, np.int32(32), np.int32(10), 160, 160]
+
+[20:36:46] done pass=False
+[20:41:05] unet loaded in 1.2s rss=16.8GB
+[20:41:05] statics[body]: ehs_cond(13, 77, 2048) text_aug(13, 1280)
+[20:41:05] statics[head]: ehs_cond(11, 77, 2048) text_aug(11, 1280)
+[20:41:07] traced graph reloaded from /Users/jup33q/see-through/migration/m3/out/traced_unet_merged.pt
+[20:41:07] graph surgery: repeat_interleave -> expand (symbolic frames) OK
+[20:41:07] patched coremltools _group_norm_impl for symbolic batch
+[20:41:07] coremltools 9.0
+[20:41:10] FAILED:
+Traceback (most recent call last):
+  File "/Users/jup33q/see-through/migration/m3/scripts/02_convert_unet_merged.py", line 297, in main
+    mlmodel = ct.convert(
+              ^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/_converters_entry.py", line 646, in convert
+    mlmodel = mil_convert(
+              ^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/converter.py", line 186, in mil_convert
+    return _mil_convert(
+           ^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/converter.py", line 218, in _mil_convert
+    proto, mil_program = mil_convert_to_proto(
+                         ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/converter.py", line 294, in mil_convert_to_proto
+    prog = frontend_converter(model, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/converter.py", line 106, in __call__
+    return load(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/load.py", line 87, in load
+    return _perform_torch_convert(converter, debug)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/load.py", line 150, in _perform_torch_convert
+    prog = converter.convert()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/converter.py", line 1392, in convert
+    convert_nodes(self.context, self.graph, early_exit=not has_states)
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 118, in convert_nodes
+    raise e     # re-raise exception
+    ^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 113, in convert_nodes
+    convert_single_node(context, node)
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 174, in convert_single_node
+    add_op(context, node)
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/coremltools/converters/mil/frontend/torch/ops.py", line 2874, in group_norm
+    result = _group_norm_impl(x, num_groups, weight, bias, eps)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jup33q/see-through/migration/m3/scripts/02_convert_unet_merged.py", line 168, in impl
+    else _mb.const(val=_np.int32(a)))
+                       ^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/see_through/lib/python3.12/site-packages/sympy/core/expr.py", line 342, in __int__
+    raise TypeError("Cannot convert symbols to int")
+TypeError: Cannot convert symbols to int
+
+[20:41:10] done pass=False
+[20:42:06] unet loaded in 1.2s rss=16.8GB
+[20:42:06] statics[body]: ehs_cond(13, 77, 2048) text_aug(13, 1280)
+[20:42:06] statics[head]: ehs_cond(11, 77, 2048) text_aug(11, 1280)
+[20:42:07] traced graph reloaded from /Users/jup33q/see-through/migration/m3/out/traced_unet_merged.pt
+[20:42:07] graph surgery: repeat_interleave -> expand (symbolic frames) OK
+[20:42:08] patched coremltools _group_norm_impl for symbolic batch
+[20:42:08] coremltools 9.0
+[20:43:38] CONVERT OK in 90.57s rss=36.7GB
+[20:43:39] mlpackage saved: /Users/jup33q/see-through/migration/m3/out/models/layerdiff3d_unet_merged_fp16.mlpackage (8121.5MB)
+[20:43:58] mlpackage loaded rss=15.7GB
+[20:44:19] coreml[body]: psnr=82.23dB first=5.2s next3=['5.4', '5.4', '5.4']s rss=15.7GB
+[20:44:42] coreml[head]: psnr=82.26dB first=8.0s next3=['4.8', '4.9', '4.9']s rss=15.7GB
+[20:45:10] compute plan: {'total_ops': 12057, 'preferred_device': {'const_or_no_usage': 6436, 'MLGPUComputeDevice': 5621}}
+[20:45:10] done pass=True

@@ -1,0 +1,20 @@
+{
+  "command" : "unet-step",
+  "forward_ms_first" : 4533.8189697265625,
+  "forward_ms_warm" : [
+    5122.881103515625,
+    5381.1358642578125
+  ],
+  "max_abs" : 0.044921875,
+  "model" : "merged",
+  "pass_name" : "body",
+  "pred_shape" : [
+    1,
+    13,
+    4,
+    160,
+    160
+  ],
+  "psnr_db" : 68.175987100733664,
+  "step" : 15
+}

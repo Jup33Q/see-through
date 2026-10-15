@@ -1,0 +1,35 @@
+{
+  "package": "/Users/jup33q/see-through/migration/m3/out/models/layerdiff3d_unet_merged_fp16.mlpackage",
+  "convert_s": 90.57,
+  "mlpackage_mb": 8121.5,
+  "coreml": {
+    "body": {
+      "psnr_db": 82.23010275396868,
+      "max_abs": 0.0037317276000976562,
+      "predict_first_s": 5.24,
+      "predict_times_s": [
+        5.35,
+        5.36,
+        5.43
+      ]
+    },
+    "head": {
+      "psnr_db": 82.25900286445425,
+      "max_abs": 0.0032215118408203125,
+      "predict_first_s": 8.02,
+      "predict_times_s": [
+        4.84,
+        4.87,
+        4.91
+      ]
+    }
+  },
+  "compute_plan": {
+    "total_ops": 12057,
+    "preferred_device": {
+      "const_or_no_usage": 6436,
+      "MLGPUComputeDevice": 5621
+    }
+  },
+  "pass": true
+}

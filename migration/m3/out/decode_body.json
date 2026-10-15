@@ -1,0 +1,85 @@
+{
+  "command" : "decode",
+  "pass" : true,
+  "pass_name" : "body",
+  "tags" : [
+    {
+      "exact" : false,
+      "max_abs" : 6,
+      "psnr_db" : 55.691215945376598,
+      "tag" : "front hair"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 17,
+      "psnr_db" : 53.9271807293349,
+      "tag" : "back hair"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 13,
+      "psnr_db" : 53.605566576109638,
+      "tag" : "head"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 4,
+      "psnr_db" : 53.57070050283663,
+      "tag" : "neck"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 4,
+      "psnr_db" : 52.535698453697393,
+      "tag" : "neckwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 8,
+      "psnr_db" : 53.078688818420538,
+      "tag" : "topwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 9,
+      "psnr_db" : 52.442627805346056,
+      "tag" : "handwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 16,
+      "psnr_db" : 53.115779767102822,
+      "tag" : "bottomwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 6,
+      "psnr_db" : 52.821172767170872,
+      "tag" : "legwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 13,
+      "psnr_db" : 53.275637640389846,
+      "tag" : "footwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 4,
+      "psnr_db" : 52.835670305004491,
+      "tag" : "tail"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 4,
+      "psnr_db" : 52.207976213751188,
+      "tag" : "wings"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 4,
+      "psnr_db" : 51.811305553084246,
+      "tag" : "objects"
+    }
+  ]
+}
