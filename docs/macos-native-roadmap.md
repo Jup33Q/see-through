@@ -115,12 +115,30 @@ CUDA 硬编码点（MPS 移植面，约 10 行）：
 
 ## M3 — LayerDiff3D UNet CoreML（主体工程）
 
-1. UNet trace/转换（固定 shape，body/head 两个 frame 档）→ fp16，必要时 palettize。
-2. DPMSolverMultistep（sde-dpmsolver++，zero final sigmas）调度器 Swift 实现。
-3. CFG 组装、源图 latent 编码、c_concat 条件拼装等管线胶水逻辑 Swift 化。
-4. 逐阶段对齐：先对齐单步 UNet 输出，再对齐完整去噪轨迹，最后对齐解码 PNG。
+前置资产：M1 Spike B 已验证转换链路（`spikes/m1/spike_b_unet/convert_unet.py`，
+body13/head11 两档 trace→convert→对齐 PSNR≈82 dB 全通，mlpackage 留本地）；
+文本条件用 M2 embedding 包（`migration/m2/out/embeddings/`，运行时无 CLIP）；
+HF 缓存 2026-10-15 被清理，开工前需重下权重（`HTTPS_PROXY=http://127.0.0.1:7890`
+或 `HF_ENDPOINT=https://hf-mirror.com`，约 8–10 GB）。
 
-验收：body/head 两 pass 输出 PNG 与 golden 视觉一致、逐层 PSNR 达标；记录 ANE 耗时/内存。
+1. UNet 正式转换：复用 Spike B 链路，固定 shape（latent 160²、body 13 / head 11 帧）
+   → fp16。**合并两档为单包**：`group_index` 在 `layerdiff3d.py:1628,1689` 是 Python
+   索引（trace 时常量化），致两档包 99% 权重重复（各 7.6 GB）——用薄 wrapper 把 group
+   embedding 选择改为张量入参（不改上游语义），合并后单包约 7.6 GB；必要时 palettize。
+2. 对齐锚点 dump：M0 golden 只冻了最终 PNG，需先在 PyTorch 侧 dump body/head 两 pass
+   的 30 步去噪轨迹（timesteps/sigmas/每步 latents/单步 UNet 输入输出对）作为调度器
+   与轨迹对齐基准，存 `migration/m3/golden_trajectory/`。
+3. DPMSolverMultistep（sde-dpmsolver++，zero final sigmas）调度器 Swift 实现，
+   按锚点 2 逐步对齐 sigma/latent。
+4. 管线胶水 Swift 化：源图 latent 编码（复用 M2 CoreML 小件）、c_concat 拼装与帧扩展、
+   固定 seed 初始噪声。**注意：golden 运行 cfg=1.0 ⇒ CFG 关闭**
+   （`do_classifier_free_guidance = scale > 1`），默认路径无 CFG 双批/uncond 分支，
+   不要实现多余路径（negative embedding 已导出备用）。
+5. 逐阶段对齐：单步 UNet 输出 → 完整去噪轨迹 → 解码 PNG。
+
+验收：body/head 两 pass 输出 PNG 与 golden 视觉一致、逐层 PSNR 达标；记录 CoreML
+耗时/内存（已知 computeUnits=ALL 下计算算子 100% 落 GPU、ANE 落盘率 0%——
+ANE 优化属独立后续 spike，不阻塞本阶段验收）。
 
 ## M4 — Marigold UNet CoreML
 
