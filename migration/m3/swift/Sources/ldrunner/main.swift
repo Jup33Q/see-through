@@ -1,6 +1,6 @@
 import Foundation
 
-/// ldrunner — LayerDiff3D CoreML 迁移 M3 对齐工具
+/// ldrunner — LayerDiff3D / Marigold CoreML 与 M5 后处理对齐工具
 ///
 /// 用法:
 ///   ldrunner sched-check-fixture [--out x.json]
@@ -15,12 +15,13 @@ import Foundation
 ///   ldrunner mari-denoise [--traj dir] [--out x.json]
 ///   ldrunner mari-decode  [--traj dir] [--out x.json]
 ///   ldrunner mari-e2e     [--traj dir] [--out x.json]
+///   ldrunner m5-post      [--src dir] [--psd file] [--tblr-split false] [--out x.json]
 ///
 /// 退出码: 0 正常/通过, 1 对比未通过, 2 用法错误或缺少前置产物(待锚点/待模型)
 
 func usage() -> Never {
     print("""
-    ldrunner — LayerDiff3D M3 / Marigold M4 CoreML 对齐工具
+    ldrunner — LayerDiff3D M3 / Marigold M4 / 后处理 M5 对齐工具
       sched-check-fixture                 调度器对 Fixtures 自检（无需锚点/模型）
       sched-check  --traj <dir>           逐步对齐 golden trajectory
       unet-step    --traj <dir> --step N  merged UNet 单步对比
@@ -33,7 +34,8 @@ func usage() -> Never {
       mari-denoise       [--traj dir]     4 步 CoreML 去噪循环（对齐模式）
       mari-decode        [--traj dir]     decode_in → 23 深度 PNG → golden 对比
       mari-e2e           [--traj dir]     全胶水（装配→编码→去噪→解码→golden）
-    公共参数: --out <path>（m3 命令相对路径落 migration/m3/out/，mari-* 落 migration/m4/out/）
+      m5-post           [--src dir]     golden PNG/depth → 原生 RLE PSD（默认 M0 参数）
+    公共参数: --out <path>（m3 命令相对路径落 migration/m3/out/，mari-* 落 migration/m4/out/，m5-* 落 migration/m5/out/）
     """)
     exit(2)
 }
@@ -85,6 +87,11 @@ do {
         try MarigoldCommands.decode(traj: params["traj"] ?? Paths.m4Traj, out: out)
     case "mari-e2e":
         try MarigoldCommands.e2e(traj: params["traj"] ?? Paths.m4Traj, out: out)
+    case "m5-post":
+        let split = ["1", "true", "yes"].contains(params["tblr-split"]?.lowercased() ?? "false")
+        try M5Commands.post(src: params["src"] ?? Paths.golden,
+                            psdPath: params["psd"] ?? Paths.m5Out + "/psd/test_image.psd",
+                            tblrSplit: split, out: out)
     default:
         usage()
     }

@@ -29,6 +29,10 @@ enum Paths {
     static var mariUnet: String { m4Out + "/models/marigold_unet_fp16.mlpackage" }
     static var mariVaeEncoder: String { m4Out + "/models/marigold_vae_encoder_fp16.mlpackage" }
     static var mariVaeDecoder: String { m4Out + "/models/marigold_vae_decoder_fp16.mlpackage" }
+
+    // M5 后处理与 PSD 导出
+    static var m5: String { repo.appendingPathComponent("migration/m5").path }
+    static var m5Out: String { m5 + "/out" }
 }
 
 func requireFiles(_ paths: [String], hint: String) throws {
@@ -87,6 +91,11 @@ func jsonWrite(_ obj: [String: Any], _ path: String?) {
 /// m4 命令专用：相对路径落在 migration/m4/out/ 下
 func jsonWriteM4(_ obj: [String: Any], _ path: String?) {
     jsonWriteBase(obj, path, base: Paths.m4Out)
+}
+
+/// m5 命令专用：相对路径落在 migration/m5/out/ 下
+func jsonWriteM5(_ obj: [String: Any], _ path: String?) {
+    jsonWriteBase(obj, path, base: Paths.m5Out)
 }
 
 private func jsonWriteBase(_ obj: [String: Any], _ path: String?, base: String) {

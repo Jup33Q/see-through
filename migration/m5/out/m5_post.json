@@ -1,0 +1,215 @@
+{
+  "command" : "m5-post",
+  "dropped_empty_tags" : [
+    "headwear",
+    "earwear",
+    "neckwear",
+    "tail",
+    "wings",
+    "objects"
+  ],
+  "elapsed_ms" : 318.7178955078125,
+  "frame_size" : [
+    1280,
+    1280
+  ],
+  "input_part_slots" : 23,
+  "layer_count" : 17,
+  "layer_order" : [
+    "back hair",
+    "handwear",
+    "legwear",
+    "footwear",
+    "neck",
+    "bottomwear",
+    "topwear",
+    "eyebrow",
+    "ears",
+    "face",
+    "nose",
+    "mouth",
+    "eyewear",
+    "eyewhite",
+    "front hair",
+    "irides",
+    "eyelash"
+  ],
+  "layers" : [
+    {
+      "depth_median" : 0.96470588445663452,
+      "tag" : "back hair",
+      "xyxy" : [
+        551,
+        17,
+        798,
+        693
+      ]
+    },
+    {
+      "depth_median" : 0.88627451658248901,
+      "tag" : "handwear",
+      "xyxy" : [
+        516,
+        238,
+        816,
+        702
+      ]
+    },
+    {
+      "depth_median" : 0.81176471710205078,
+      "tag" : "legwear",
+      "xyxy" : [
+        475,
+        616,
+        787,
+        1196
+      ]
+    },
+    {
+      "depth_median" : 0.79607844352722168,
+      "tag" : "footwear",
+      "xyxy" : [
+        444,
+        1146,
+        821,
+        1261
+      ]
+    },
+    {
+      "depth_median" : 0.75294119119644165,
+      "tag" : "neck",
+      "xyxy" : [
+        589,
+        170,
+        693,
+        271
+      ]
+    },
+    {
+      "depth_median" : 0.70980393886566162,
+      "tag" : "bottomwear",
+      "xyxy" : [
+        548,
+        455,
+        798,
+        679
+      ]
+    },
+    {
+      "depth_median" : 0.65098041296005249,
+      "tag" : "topwear",
+      "xyxy" : [
+        538,
+        231,
+        756,
+        484
+      ]
+    },
+    {
+      "depth_median" : 0.55686277151107788,
+      "tag" : "eyebrow",
+      "xyxy" : [
+        601,
+        107,
+        690,
+        118
+      ]
+    },
+    {
+      "depth_median" : 0.50688236951828003,
+      "tag" : "ears",
+      "xyxy" : [
+        567,
+        128,
+        713,
+        175
+      ]
+    },
+    {
+      "depth_median" : 0.5058823823928833,
+      "tag" : "face",
+      "xyxy" : [
+        582,
+        66,
+        709,
+        203
+      ]
+    },
+    {
+      "depth_median" : 0.50488239526748657,
+      "tag" : "nose",
+      "xyxy" : [
+        644,
+        155,
+        649,
+        161
+      ]
+    },
+    {
+      "depth_median" : 0.50488239526748657,
+      "tag" : "mouth",
+      "xyxy" : [
+        641,
+        176,
+        648,
+        182
+      ]
+    },
+    {
+      "depth_median" : 0.46666666865348816,
+      "tag" : "eyewear",
+      "xyxy" : [
+        593,
+        136,
+        698,
+        169
+      ]
+    },
+    {
+      "depth_median" : 0.20784313976764679,
+      "tag" : "eyewhite",
+      "xyxy" : [
+        594,
+        129,
+        693,
+        153
+      ]
+    },
+    {
+      "depth_median" : 0.20000000298023224,
+      "tag" : "front hair",
+      "xyxy" : [
+        574,
+        18,
+        721,
+        299
+      ]
+    },
+    {
+      "depth_median" : 0.16862745583057404,
+      "tag" : "irides",
+      "xyxy" : [
+        604,
+        130,
+        682,
+        152
+      ]
+    },
+    {
+      "depth_median" : 0.16078431904315948,
+      "tag" : "eyelash",
+      "xyxy" : [
+        586,
+        121,
+        701,
+        147
+      ]
+    }
+  ],
+  "process_ms" : 288.9678955078125,
+  "psd" : "\/Users\/jup33q\/see-through\/migration\/m5\/out\/psd\/test_image.psd",
+  "rotate" : false,
+  "save_to_psd" : true,
+  "source" : "\/Users\/jup33q\/see-through\/tests\/golden\/test_image",
+  "tblr_split" : false
+}

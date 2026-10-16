@@ -1,0 +1,89 @@
+{
+  "command" : "m5-post",
+  "dropped_empty_tags" : [
+
+  ],
+  "elapsed_ms" : 6.85302734375,
+  "frame_size" : [
+    128,
+    128
+  ],
+  "input_part_slots" : 2,
+  "layer_count" : 6,
+  "layer_order" : [
+    "browl",
+    "browr",
+    "handwear-l",
+    "eyel",
+    "handwear-r",
+    "eyer"
+  ],
+  "layers" : [
+    {
+      "depth_median" : 0.62745100259780884,
+      "tag" : "browl",
+      "xyxy" : [
+        80,
+        50,
+        84,
+        54
+      ]
+    },
+    {
+      "depth_median" : 0.47058823704719543,
+      "tag" : "browr",
+      "xyxy" : [
+        20,
+        50,
+        26,
+        56
+      ]
+    },
+    {
+      "depth_median" : 0.39215683937072754,
+      "tag" : "handwear-l",
+      "xyxy" : [
+        90,
+        95,
+        100,
+        105
+      ]
+    },
+    {
+      "depth_median" : 0.31372550129890442,
+      "tag" : "eyel",
+      "xyxy" : [
+        80,
+        20,
+        90,
+        26
+      ]
+    },
+    {
+      "depth_median" : 0.23529410362243652,
+      "tag" : "handwear-r",
+      "xyxy" : [
+        10,
+        95,
+        22,
+        103
+      ]
+    },
+    {
+      "depth_median" : 0.15686275064945221,
+      "tag" : "eyer",
+      "xyxy" : [
+        20,
+        20,
+        28,
+        28
+      ]
+    }
+  ],
+  "process_ms" : 5.7840576171875,
+  "psd" : "\/Users\/jup33q\/see-through\/migration\/m5\/out\/split_fixture\/swift.psd",
+  "rotate" : false,
+  "save_to_psd" : true,
+  "source" : "migration\/m5\/out\/split_fixture\/input",
+  "tblr_split" : true
+}

@@ -1,0 +1,364 @@
+{
+  "document": {
+    "size": true,
+    "depth": true,
+    "color_mode": true,
+    "channels": true,
+    "layer_count": true
+  },
+  "layer_count": 6,
+  "exact_layers": 6,
+  "layers_pass": true,
+  "merged": {
+    "exact": true,
+    "differing_values": 0,
+    "max_abs_u8": 0,
+    "shape": [
+      128,
+      128,
+      3
+    ]
+  },
+  "layers": [
+    {
+      "name": "browl",
+      "bbox": [
+        80,
+        50,
+        84,
+        54
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          4,
+          4,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          4,
+          4,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "browr",
+      "bbox": [
+        20,
+        50,
+        26,
+        56
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          6,
+          6,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          6,
+          6,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "handwear-l",
+      "bbox": [
+        90,
+        95,
+        100,
+        105
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          10,
+          10,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          10,
+          10,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "eyel",
+      "bbox": [
+        80,
+        20,
+        90,
+        26
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          6,
+          10,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          6,
+          10,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "handwear-r",
+      "bbox": [
+        10,
+        95,
+        22,
+        103
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          8,
+          12,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          8,
+          12,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "eyer",
+      "bbox": [
+        20,
+        20,
+        28,
+        28
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          8,
+          8,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          8,
+          8,
+          1
+        ]
+      },
+      "pass": true
+    }
+  ],
+  "actual": "/Users/jup33q/see-through/migration/m5/out/split_fixture/swift.psd",
+  "reference": "/Users/jup33q/see-through/migration/m5/out/split_fixture/input.psd",
+  "psd_tools_version": "1.14.2",
+  "sidecar_json_exact": true,
+  "roundtrip": {
+    "document": {
+      "size": true,
+      "depth": true,
+      "color_mode": true,
+      "channels": true,
+      "layer_count": true
+    },
+    "layer_count": 6,
+    "exact_layers": 6,
+    "layers_pass": true,
+    "merged": {
+      "exact": true,
+      "differing_values": 0,
+      "max_abs_u8": 0,
+      "shape": [
+        128,
+        128,
+        3
+      ]
+    }
+  },
+  "roundtrip_pass": true,
+  "pass": true
+}

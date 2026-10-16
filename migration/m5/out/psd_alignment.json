@@ -1,0 +1,936 @@
+{
+  "document": {
+    "size": true,
+    "depth": true,
+    "color_mode": true,
+    "channels": true,
+    "layer_count": true
+  },
+  "layer_count": 17,
+  "exact_layers": 17,
+  "layers_pass": true,
+  "merged": {
+    "exact": false,
+    "differing_values": 9811,
+    "max_abs_u8": 1,
+    "shape": [
+      1280,
+      1280,
+      3
+    ]
+  },
+  "layers": [
+    {
+      "name": "back hair",
+      "bbox": [
+        551,
+        17,
+        798,
+        693
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          676,
+          247,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          676,
+          247,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "handwear",
+      "bbox": [
+        516,
+        238,
+        816,
+        702
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          464,
+          300,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          464,
+          300,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "legwear",
+      "bbox": [
+        475,
+        616,
+        787,
+        1196
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          580,
+          312,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          580,
+          312,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "footwear",
+      "bbox": [
+        444,
+        1146,
+        821,
+        1261
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          115,
+          377,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          115,
+          377,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "neck",
+      "bbox": [
+        589,
+        170,
+        693,
+        271
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          101,
+          104,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          101,
+          104,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "bottomwear",
+      "bbox": [
+        548,
+        455,
+        798,
+        679
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          224,
+          250,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          224,
+          250,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "topwear",
+      "bbox": [
+        538,
+        231,
+        756,
+        484
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          253,
+          218,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          253,
+          218,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "eyebrow",
+      "bbox": [
+        601,
+        107,
+        690,
+        118
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          11,
+          89,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          11,
+          89,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "ears",
+      "bbox": [
+        567,
+        128,
+        713,
+        175
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          47,
+          146,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          47,
+          146,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "face",
+      "bbox": [
+        582,
+        66,
+        709,
+        203
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          137,
+          127,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          137,
+          127,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "nose",
+      "bbox": [
+        644,
+        155,
+        649,
+        161
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          6,
+          5,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          6,
+          5,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "mouth",
+      "bbox": [
+        641,
+        176,
+        648,
+        182
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          6,
+          7,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          6,
+          7,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "eyewear",
+      "bbox": [
+        593,
+        136,
+        698,
+        169
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          33,
+          105,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          33,
+          105,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "eyewhite",
+      "bbox": [
+        594,
+        129,
+        693,
+        153
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          24,
+          99,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          24,
+          99,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "front hair",
+      "bbox": [
+        574,
+        18,
+        721,
+        299
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          281,
+          147,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          281,
+          147,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "irides",
+      "bbox": [
+        604,
+        130,
+        682,
+        152
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          22,
+          78,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          22,
+          78,
+          1
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "eyelash",
+      "bbox": [
+        586,
+        121,
+        701,
+        147
+      ],
+      "channel_ids": [
+        -1,
+        0,
+        1,
+        2,
+        -2
+      ],
+      "compression": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "structure": {
+        "name": true,
+        "bbox": true,
+        "opacity": true,
+        "visible": true,
+        "channel_ids": true,
+        "compression": true
+      },
+      "rgba": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          26,
+          115,
+          4
+        ]
+      },
+      "mask": {
+        "exact": true,
+        "differing_values": 0,
+        "max_abs_u8": 0,
+        "shape": [
+          26,
+          115,
+          1
+        ]
+      },
+      "pass": true
+    }
+  ],
+  "actual": "/Users/jup33q/see-through/migration/m5/out/psd/test_image.psd",
+  "reference": "/Users/jup33q/see-through/tests/golden/test_image/test_image.psd",
+  "psd_tools_version": "1.14.2",
+  "sidecar_json_exact": true,
+  "roundtrip": {
+    "document": {
+      "size": true,
+      "depth": true,
+      "color_mode": true,
+      "channels": true,
+      "layer_count": true
+    },
+    "layer_count": 17,
+    "exact_layers": 17,
+    "layers_pass": true,
+    "merged": {
+      "exact": true,
+      "differing_values": 0,
+      "max_abs_u8": 0,
+      "shape": [
+        1280,
+        1280,
+        3
+      ]
+    }
+  },
+  "roundtrip_pass": true,
+  "pass": true
+}
