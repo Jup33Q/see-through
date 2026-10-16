@@ -21,6 +21,14 @@ enum Paths {
     static var vaeDecoder: String { repo.path + "/migration/m2/out/models/sdxl_vae_decoder_fp16.mlpackage" }
     static var transDecoder: String { repo.path + "/migration/m2/out/models/trans_vae_decoder_fp16.mlpackage" }
     static func statics(_ pass: String) -> String { m3Out + "/statics/\(pass)" }
+
+    // M4 Marigold 伪深度
+    static var m4: String { repo.appendingPathComponent("migration/m4").path }
+    static var m4Out: String { m4 + "/out" }
+    static var m4Traj: String { m4 + "/golden_trajectory" }
+    static var mariUnet: String { m4Out + "/models/marigold_unet_fp16.mlpackage" }
+    static var mariVaeEncoder: String { m4Out + "/models/marigold_vae_encoder_fp16.mlpackage" }
+    static var mariVaeDecoder: String { m4Out + "/models/marigold_vae_decoder_fp16.mlpackage" }
 }
 
 func requireFiles(_ paths: [String], hint: String) throws {
@@ -73,13 +81,33 @@ func jsonLoad(_ path: String) throws -> [String: Any] {
 }
 
 func jsonWrite(_ obj: [String: Any], _ path: String?) {
+    jsonWriteBase(obj, path, base: Paths.m3Out)  // 相对路径落在 migration/m3/out/ 下
+}
+
+/// m4 命令专用：相对路径落在 migration/m4/out/ 下
+func jsonWriteM4(_ obj: [String: Any], _ path: String?) {
+    jsonWriteBase(obj, path, base: Paths.m4Out)
+}
+
+private func jsonWriteBase(_ obj: [String: Any], _ path: String?, base: String) {
     guard let path else { return }
     var p = path
-    if !p.hasPrefix("/") { p = Paths.m3Out + "/" + p }  // 相对路径落在 migration/m3/out/ 下
+    if !p.hasPrefix("/") { p = base + "/" + p }
     try? FileManager.default.createDirectory(atPath: URL(fileURLWithPath: p).deletingLastPathComponent().path, withIntermediateDirectories: true)
-    if let d = try? JSONSerialization.data(withJSONObject: obj, options: [.prettyPrinted, .sortedKeys]) {
+    if let d = try? JSONSerialization.data(withJSONObject: jsonSanitize(obj), options: [.prettyPrinted, .sortedKeys]) {
         try? d.write(to: URL(fileURLWithPath: p))
         print("JSON -> \(p)")
+    }
+}
+
+/// JSON 不支持 ±inf（NSException 而非 Swift error，try? 兜不住）→ 转字符串
+private func jsonSanitize(_ v: Any) -> Any {
+    switch v {
+    case let d as Double where d.isInfinite: return d > 0 ? "inf" : "-inf"
+    case let f as Float where f.isInfinite: return f > 0 ? "inf" : "-inf"
+    case let dict as [String: Any]: return dict.mapValues(jsonSanitize)
+    case let arr as [Any]: return arr.map(jsonSanitize)
+    default: return v
     }
 }
 

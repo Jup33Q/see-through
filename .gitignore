@@ -58,6 +58,11 @@ migration/m3/out/decode_*/
 migration/m3/out/e2e_*/
 migration/m3/swift/.build/
 
+# ── M4: 轨迹锚点/Swift 对齐输出留本地 ────────────────────────────
+migration/m4/golden_trajectory/
+migration/m4/out/decode_marigold/
+migration/m4/out/e2e_marigold/
+
 # ── Symlink (user creates locally: ln -sf common/assets assets) ──
 /assets
 # end of file

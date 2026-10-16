@@ -1,0 +1,74 @@
+{
+  "modules": {
+    "marigold_vae_encoder": {
+      "package": "/Users/jup33q/see-through/migration/m4/out/models/marigold_vae_encoder_fp16.mlpackage",
+      "threshold_dyn_db": 40.0,
+      "convert_s": 4.49,
+      "mlpackage_mb": 68.5,
+      "align_all": {
+        "frame_00": {
+          "psnr_dynamic_db": 65.97697030417834,
+          "max_abs": 0.21728515625
+        },
+        "frame_19": {
+          "psnr_dynamic_db": 60.80679118065828,
+          "max_abs": 0.25390625
+        }
+      },
+      "coreml_forward_s": 0.0917,
+      "ane_path": {
+        "runnable": true,
+        "psnr_dynamic_db": 63.20571011949886
+      },
+      "compute_plan": {
+        "total_ops": 756,
+        "preferred_device": {
+          "const_or_no_usage": 453,
+          "MLGPUComputeDevice": 303
+        }
+      },
+      "pass": true,
+      "checks": {
+        "frame_00": true,
+        "frame_19": true,
+        "ane": true
+      }
+    },
+    "marigold_vae_decoder": {
+      "package": "/Users/jup33q/see-through/migration/m4/out/models/marigold_vae_decoder_fp16.mlpackage",
+      "threshold_dyn_db": 40.0,
+      "convert_s": 2.26,
+      "mlpackage_mb": 99.2,
+      "align_all": {
+        "frame_00": {
+          "psnr_dynamic_db": 55.03700780934654,
+          "max_abs": 0.035888671875
+        },
+        "frame_19": {
+          "psnr_dynamic_db": 57.16269461218882,
+          "max_abs": 0.0546875
+        }
+      },
+      "coreml_forward_s": 0.1266,
+      "ane_path": {
+        "runnable": true,
+        "psnr_dynamic_db": 52.23844745499235
+      },
+      "compute_plan": {
+        "total_ops": 989,
+        "preferred_device": {
+          "const_or_no_usage": 586,
+          "MLGPUComputeDevice": 403
+        }
+      },
+      "pass": true,
+      "checks": {
+        "frame_00": true,
+        "frame_19": true,
+        "ane": true
+      }
+    }
+  },
+  "scaling_factor": 0.18215,
+  "pass": true
+}

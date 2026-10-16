@@ -9,19 +9,31 @@ import Foundation
 ///   ldrunner denoise      --traj <dir> [--out x.json]
 ///   ldrunner decode       --traj <dir> [--out x.json]
 ///   ldrunner e2e          --pass body|head [--out x.json]
+///   ldrunner mari-sched-check-fixture [--out x.json]
+///   ldrunner mari-sched-check  [--traj dir] [--out x.json]
+///   ldrunner mari-unet-step    --step N [--traj dir] [--out x.json]
+///   ldrunner mari-denoise [--traj dir] [--out x.json]
+///   ldrunner mari-decode  [--traj dir] [--out x.json]
+///   ldrunner mari-e2e     [--traj dir] [--out x.json]
 ///
 /// 退出码: 0 正常/通过, 1 对比未通过, 2 用法错误或缺少前置产物(待锚点/待模型)
 
 func usage() -> Never {
     print("""
-    ldrunner — LayerDiff3D M3 CoreML 对齐工具
+    ldrunner — LayerDiff3D M3 / Marigold M4 CoreML 对齐工具
       sched-check-fixture                 调度器对 Fixtures 自检（无需锚点/模型）
       sched-check  --traj <dir>           逐步对齐 golden trajectory
       unet-step    --traj <dir> --step N  merged UNet 单步对比
       denoise      --traj <dir>           30 步 CoreML 去噪循环（对齐模式）
       decode       --traj <dir>           decode_in → PNG → golden 对比
       e2e          --pass body|head       全胶水（编码→去噪→解码→golden）
-    公共参数: --out <path>（相对路径落在 migration/m3/out/ 下）
+      mari-sched-check-fixture            DDIM 调度器对 Fixtures 自检（无需锚点/模型）
+      mari-sched-check   [--traj dir]     DDIM 4 步锚点 replay（默认 migration/m4/golden_trajectory）
+      mari-unet-step     --step N         Marigold UNet 单步对比（阈值 60dB）
+      mari-denoise       [--traj dir]     4 步 CoreML 去噪循环（对齐模式）
+      mari-decode        [--traj dir]     decode_in → 23 深度 PNG → golden 对比
+      mari-e2e           [--traj dir]     全胶水（装配→编码→去噪→解码→golden）
+    公共参数: --out <path>（m3 命令相对路径落 migration/m3/out/，mari-* 落 migration/m4/out/）
     """)
     exit(2)
 }
@@ -60,6 +72,19 @@ do {
     case "e2e":
         guard let p = params["pass"], ["body", "head"].contains(p) else { usage() }
         try Commands.e2e(pass: p, out: out)
+    case "mari-sched-check-fixture":
+        try MarigoldCommands.schedCheckFixture(out: out)
+    case "mari-sched-check":
+        try MarigoldCommands.schedCheck(traj: params["traj"] ?? Paths.m4Traj, out: out)
+    case "mari-unet-step":
+        guard let n = params["step"].flatMap(Int.init) else { usage() }
+        try MarigoldCommands.unetStep(traj: params["traj"] ?? Paths.m4Traj, stepN: n, out: out)
+    case "mari-denoise":
+        try MarigoldCommands.denoise(traj: params["traj"] ?? Paths.m4Traj, out: out)
+    case "mari-decode":
+        try MarigoldCommands.decode(traj: params["traj"] ?? Paths.m4Traj, out: out)
+    case "mari-e2e":
+        try MarigoldCommands.e2e(traj: params["traj"] ?? Paths.m4Traj, out: out)
     default:
         usage()
     }

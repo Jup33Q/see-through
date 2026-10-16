@@ -35,11 +35,19 @@ func makeMA(_ shape: [Int]) throws -> MLMultiArray {
 }
 
 extension MLMultiArray {
-    /// C-contiguous fp32 → [Float]
+    /// C-contiguous → [Float]（fp32 直通；fp16 逐元素转换——M4 VAE decoder 输出为 fp16）
     func toFloatArray() -> [Float] {
         let n = count
-        let ptr = dataPointer.bindMemory(to: Float.self, capacity: n)
-        return Array(UnsafeBufferPointer(start: ptr, count: n))
+        switch dataType {
+        case .float32:
+            let ptr = dataPointer.bindMemory(to: Float.self, capacity: n)
+            return Array(UnsafeBufferPointer(start: ptr, count: n))
+        case .float16:
+            let ptr = dataPointer.bindMemory(to: Float16.self, capacity: n)
+            return UnsafeBufferPointer(start: ptr, count: n).map { Float($0) }
+        default:
+            preconditionFailure("toFloatArray: unsupported dtype \(dataType.rawValue)")
+        }
     }
 
     /// 写入 C-contiguous fp32

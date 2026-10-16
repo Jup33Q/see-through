@@ -1,0 +1,13 @@
+{
+  "command" : "mari-unet-step",
+  "forward_ms_first" : 1903.9029541015625,
+  "forward_ms_warm" : [
+    1295.303955078125,
+    1296.31396484375
+  ],
+  "max_abs" : 0.0322265625,
+  "pass" : true,
+  "psnr_db" : 63.929981319003808,
+  "step" : 2,
+  "timestep" : 499
+}

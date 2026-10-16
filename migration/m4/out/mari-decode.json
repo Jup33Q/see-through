@@ -1,0 +1,152 @@
+{
+  "command" : "mari-decode",
+  "decode_out_max_abs" : 0.062255859375,
+  "decode_out_psnr_db" : 57.603438761132757,
+  "depth_pred_768_max_abs" : 0.0311279296875,
+  "depth_pred_768_psnr_db" : 62.697248010909661,
+  "depth_pred_src_max_abs" : 0.029100358486175537,
+  "depth_pred_src_psnr_db" : 55.253128367920837,
+  "golden_exact" : 0,
+  "golden_min_psnr_db" : 48.240904263457658,
+  "pass" : true,
+  "tags" : [
+    {
+      "exact" : false,
+      "max_abs" : 4,
+      "psnr_db" : 74.030119376501986,
+      "tag" : "front hair"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 3,
+      "psnr_db" : 66.087020095732939,
+      "tag" : "back hair"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.26923920724181,
+      "tag" : "headwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.437064866946258,
+      "tag" : "face"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 3,
+      "psnr_db" : 88.12656452115948,
+      "tag" : "eyebrow"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 7,
+      "psnr_db" : 82.53713855182454,
+      "tag" : "eyelash"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 88.371686019933549,
+      "tag" : "irides"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 81.211652583585575,
+      "tag" : "eyewhite"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 6,
+      "psnr_db" : 48.620425898775956,
+      "tag" : "eyewear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 3,
+      "psnr_db" : 48.384332578094593,
+      "tag" : "ears"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.242791508385203,
+      "tag" : "earwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 3,
+      "psnr_db" : 48.240904263457658,
+      "tag" : "nose"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 3,
+      "psnr_db" : 48.277996873237903,
+      "tag" : "mouth"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.404987868679747,
+      "tag" : "neck"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.27279821735857,
+      "tag" : "neckwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 3,
+      "psnr_db" : 48.887805637421579,
+      "tag" : "topwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 4,
+      "psnr_db" : 48.457667283731752,
+      "tag" : "handwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.442093830303833,
+      "tag" : "bottomwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.610678179860891,
+      "tag" : "legwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.302423535139603,
+      "tag" : "footwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 1,
+      "psnr_db" : 48.259488784873128,
+      "tag" : "tail"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.25717398741461,
+      "tag" : "wings"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.255089541926701,
+      "tag" : "objects"
+    }
+  ]
+}

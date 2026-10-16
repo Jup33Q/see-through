@@ -1,0 +1,130 @@
+{
+  "stage": "M4 Marigold 伪深度 Swift 侧对齐汇总",
+  "date": "2026-10-16",
+  "commands": {
+    "mari-sched-check-fixture": {
+      "pass": true,
+      "timesteps_match": true,
+      "alphas_cumprod_max_rel_err": 4.436131587989816e-16,
+      "alphas_cumprod_bitexact": "903/1000",
+      "final_alpha_cumprod_exact": true,
+      "replay_max_abs": 0,
+      "replay_min_psnr_db": "inf"
+    },
+    "mari-sched-check": {
+      "pass": true,
+      "max_abs": 0.031003475189208984,
+      "min_psnr_db": 58.25649299282926,
+      "threshold": "max_abs<0.05（锚点 bf16 算术量化论证，同 M3）",
+      "steps": [
+        {
+          "step": 0,
+          "psnr_db": 65.25941071456987,
+          "max_abs": 0.02783489227294922
+        },
+        {
+          "step": 1,
+          "psnr_db": 61.56106478669666,
+          "max_abs": 0.031003475189208984
+        },
+        {
+          "step": 2,
+          "psnr_db": 60.74427791537882,
+          "max_abs": 0.027936697006225586
+        },
+        {
+          "step": 3,
+          "psnr_db": 58.25649299282926,
+          "max_abs": 0.023114442825317383
+        }
+      ]
+    },
+    "mari-unet-step": {
+      "threshold_db": 60,
+      "step0": {
+        "pass": true,
+        "psnr_db": 61.71997596052651,
+        "max_abs": 0.048828125,
+        "forward_ms_first": 1900.31298828125,
+        "forward_ms_warm": [
+          1293.4339599609375,
+          1296.2711181640625
+        ]
+      },
+      "step2": {
+        "pass": true,
+        "psnr_db": 63.92998131900381,
+        "max_abs": 0.0322265625,
+        "forward_ms_first": 1903.9029541015625,
+        "forward_ms_warm": [
+          1295.303955078125,
+          1296.31396484375
+        ]
+      }
+    },
+    "mari-denoise": {
+      "decode_in_psnr_db": 57.540229370672414,
+      "decode_in_max_abs": 0.05482792854309082,
+      "forward_ms_total": 5870.6861572265625,
+      "steps": [
+        {
+          "step": 0,
+          "psnr_db": 65.08870846924896,
+          "max_abs": 0.02854633331298828,
+          "forward_ms": 1935.2640380859375
+        },
+        {
+          "step": 1,
+          "psnr_db": 60.1486548645644,
+          "max_abs": 0.04081916809082031,
+          "forward_ms": 1300.1309814453125
+        },
+        {
+          "step": 2,
+          "psnr_db": 58.85521340143264,
+          "max_abs": 0.045442819595336914,
+          "forward_ms": 1295.546142578125
+        },
+        {
+          "step": 3,
+          "psnr_db": 57.540229370672414,
+          "max_abs": 0.05482792854309082,
+          "forward_ms": 1339.7449951171875
+        }
+      ]
+    },
+    "mari-decode": {
+      "pass": true,
+      "decode_out_psnr_db": 57.60343876113276,
+      "depth_pred_768_psnr_db": 62.69724801090966,
+      "depth_pred_src_psnr_db": 55.25312836792084,
+      "golden_min_psnr_db": 48.24090426345766,
+      "golden_exact": "0/23"
+    },
+    "mari-e2e": {
+      "pass": true,
+      "argb_pre_pad_psnr_db": 119.0601719675446,
+      "argb_pre_pad_max_abs": 0.003921598196029663,
+      "vae_rgb_in_psnr_db": 54.20876676147273,
+      "vae_latents_psnr_db": 57.76235296021899,
+      "vae_latents_max_abs": 1.03369140625,
+      "cond_latent_psnr_db": 54.139843577694776,
+      "decode_in_psnr_db": 54.788328209910844,
+      "decode_in_max_abs": 0.5376762747764587,
+      "depth_pred_768_psnr_db": 59.81218302616704,
+      "depth_pred_src_psnr_db": 54.236430554377684,
+      "golden_min_psnr_db": 48.22961154243344,
+      "golden_exact": "0/23",
+      "forward_ms_total_unet": 5799.09521484375
+    }
+  },
+  "acceptance": {
+    "e2e_golden_min_psnr_threshold_db": 35,
+    "unet_step_threshold_db": 60,
+    "sched_check_max_abs_threshold": 0.05
+  },
+  "outputs": {
+    "decode_pngs": "migration/m4/out/decode_marigold/",
+    "e2e_pngs": "migration/m4/out/e2e_marigold/"
+  }
+}

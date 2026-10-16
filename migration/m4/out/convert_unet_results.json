@@ -1,0 +1,54 @@
+{
+  "package": "/Users/jup33q/see-through/migration/m4/out/models/marigold_unet_fp16.mlpackage",
+  "check_steps": [
+    0,
+    2
+  ],
+  "psnr_threshold": 60.0,
+  "params_b": 1.213,
+  "eager_fp32_vs_anchor_bf16": {
+    "step_00": {
+      "psnr_db": 61.778833267307135,
+      "max_abs": 0.04732125997543335,
+      "forward_s": 59.47
+    },
+    "step_02": {
+      "psnr_db": 63.94663750806984,
+      "max_abs": 0.029999494552612305,
+      "forward_s": 963.0
+    }
+  },
+  "trace_s": 6666.12,
+  "convert_s": 307.28,
+  "mlpackage_mb": 2427.4,
+  "coreml": {
+    "step_00": {
+      "psnr_db": 61.71997596052651,
+      "max_abs": 0.048828125,
+      "predict_first_s": 3.23,
+      "predict_times_s": [
+        1.29,
+        1.29,
+        1.29
+      ]
+    },
+    "step_02": {
+      "psnr_db": 63.92998131900381,
+      "max_abs": 0.0322265625,
+      "predict_first_s": 3.24,
+      "predict_times_s": [
+        1.29,
+        1.29,
+        900.43
+      ]
+    }
+  },
+  "compute_plan": {
+    "total_ops": 4821,
+    "preferred_device": {
+      "const_or_no_usage": 2689,
+      "MLGPUComputeDevice": 2132
+    }
+  },
+  "pass": true
+}

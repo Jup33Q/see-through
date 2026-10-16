@@ -1,0 +1,191 @@
+{
+  "argb_pre_pad_max_abs" : 0.0039215981960296631,
+  "argb_pre_pad_psnr_db" : 119.0601719675446,
+  "command" : "mari-e2e",
+  "cond_latent_max_abs" : 1.03369140625,
+  "cond_latent_psnr_db" : 54.139843577694776,
+  "decode_in_max_abs" : 0.53767627477645874,
+  "decode_in_psnr_db" : 54.788328209910844,
+  "denoise_steps" : [
+    {
+      "forward_ms" : 1892.5400390625,
+      "max_abs" : 0.050378262996673584,
+      "psnr_db" : 64.819368123360007,
+      "step" : 0,
+      "timestep" : 999
+    },
+    {
+      "forward_ms" : 1294.6209716796875,
+      "max_abs" : 0.1662786602973938,
+      "psnr_db" : 59.563259946559,
+      "step" : 1,
+      "timestep" : 749
+    },
+    {
+      "forward_ms" : 1296.5069580078125,
+      "max_abs" : 0.32779484987258911,
+      "psnr_db" : 57.60970216830944,
+      "step" : 2,
+      "timestep" : 499
+    },
+    {
+      "forward_ms" : 1297.511962890625,
+      "max_abs" : 0.53767627477645874,
+      "psnr_db" : 54.788328209910844,
+      "step" : 3,
+      "timestep" : 249
+    }
+  ],
+  "depth_pred_768_max_abs" : 0.2110595703125,
+  "depth_pred_768_psnr_db" : 59.812183026167041,
+  "depth_pred_src_max_abs" : 0.14955985546112061,
+  "depth_pred_src_psnr_db" : 54.236430554377684,
+  "forward_ms_total" : 5781.179931640625,
+  "golden_exact" : 0,
+  "golden_min_psnr_db" : 48.229611542433439,
+  "pass" : true,
+  "tags" : [
+    {
+      "exact" : false,
+      "max_abs" : 22,
+      "psnr_db" : 61.630426192506469,
+      "tag" : "front hair"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 23,
+      "psnr_db" : 54.743044388712661,
+      "tag" : "back hair"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.249444193307667,
+      "tag" : "headwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 9,
+      "psnr_db" : 48.405007632997439,
+      "tag" : "face"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 10,
+      "psnr_db" : 79.115571232245912,
+      "tag" : "eyebrow"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 14,
+      "psnr_db" : 75.099085694517399,
+      "tag" : "eyelash"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 5,
+      "psnr_db" : 83.771927770317106,
+      "tag" : "irides"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 7,
+      "psnr_db" : 79.00071522312048,
+      "tag" : "eyewhite"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 38,
+      "psnr_db" : 48.523373961184802,
+      "tag" : "eyewear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 15,
+      "psnr_db" : 48.309143411471993,
+      "tag" : "ears"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.23448181322518,
+      "tag" : "earwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 5,
+      "psnr_db" : 48.229611542433439,
+      "tag" : "nose"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 7,
+      "psnr_db" : 48.259248512660307,
+      "tag" : "mouth"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 5,
+      "psnr_db" : 48.365520614780948,
+      "tag" : "neck"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.24714835547563,
+      "tag" : "neckwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 23,
+      "psnr_db" : 48.790383203286993,
+      "tag" : "topwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 9,
+      "psnr_db" : 48.326078843138902,
+      "tag" : "handwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 6,
+      "psnr_db" : 48.392923024906125,
+      "tag" : "bottomwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 6,
+      "psnr_db" : 48.386283205255445,
+      "tag" : "legwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 7,
+      "psnr_db" : 48.276979672311491,
+      "tag" : "footwear"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.240749295630145,
+      "tag" : "tail"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.2422937834884,
+      "tag" : "wings"
+    },
+    {
+      "exact" : false,
+      "max_abs" : 2,
+      "psnr_db" : 48.246416012519049,
+      "tag" : "objects"
+    }
+  ],
+  "vae_latents_max_abs" : 1.03369140625,
+  "vae_latents_psnr_db" : 57.76235296021899,
+  "vae_rgb_in_max_abs" : 0.0076344013214111328,
+  "vae_rgb_in_psnr_db" : 54.208766761472731
+}

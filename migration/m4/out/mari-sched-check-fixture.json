@@ -1,0 +1,36 @@
+{
+  "alphas_cumprod_bitexact" : 903,
+  "alphas_cumprod_max_rel_err" : 4.436131587989816e-16,
+  "command" : "mari-sched-check-fixture",
+  "final_alpha_cumprod_exact" : true,
+  "pass" : true,
+  "replay_max_abs" : 0,
+  "replay_min_psnr_db" : "inf",
+  "steps" : [
+    {
+      "max_abs" : 0,
+      "psnr_db" : "inf",
+      "step" : 0,
+      "timestep" : 999
+    },
+    {
+      "max_abs" : 0,
+      "psnr_db" : "inf",
+      "step" : 1,
+      "timestep" : 749
+    },
+    {
+      "max_abs" : 0,
+      "psnr_db" : "inf",
+      "step" : 2,
+      "timestep" : 499
+    },
+    {
+      "max_abs" : 0,
+      "psnr_db" : "inf",
+      "step" : 3,
+      "timestep" : 249
+    }
+  ],
+  "timesteps_match" : true
+}

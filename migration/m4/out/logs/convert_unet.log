@@ -1,0 +1,13 @@
+[00:50:37] unet loaded in 0.9s params=1.21B rss=5.3GB
+[00:51:36] eager[step0]: psnr=61.78dB (fp32 vs bf16 anchor) (59.5s cpu)
+[01:07:39] eager[step2]: psnr=63.95dB (fp32 vs bf16 anchor) (963.0s cpu)
+[02:58:46] TRACE OK in 6666.12s rss=14.9GB
+[02:58:47] traced graph saved: /Users/jup33q/see-through/migration/m4/out/traced_unet.pt
+[02:58:47] coremltools 9.0
+[03:03:54] CONVERT OK in 307.28s rss=19.4GB
+[03:03:55] mlpackage saved: /Users/jup33q/see-through/migration/m4/out/models/marigold_unet_fp16.mlpackage (2427.4MB)
+[03:18:58] mlpackage loaded rss=7.7GB
+[03:19:05] coreml[step0]: psnr=61.72dB first=3.2s next3=['1.3', '1.3', '1.3']s rss=7.8GB
+[03:34:11] coreml[step2]: psnr=63.93dB first=3.2s next3=['1.3', '1.3', '900.4']s rss=7.7GB
+[03:34:17] compute plan: {'total_ops': 4821, 'preferred_device': {'const_or_no_usage': 2689, 'MLGPUComputeDevice': 2132}}
+[03:34:17] done pass=True

@@ -1,0 +1,8 @@
+[22:49:06] marigold vae loaded (fp32 cpu)
+[22:49:47] [marigold_vae_encoder] frame_00: dyn_psnr=65.98dB max_abs=2.173e-01
+[22:49:47] [marigold_vae_encoder] frame_19: dyn_psnr=60.81dB max_abs=2.539e-01
+[22:49:55] [marigold_vae_encoder] fwd=0.0917s plan={'const_or_no_usage': 453, 'MLGPUComputeDevice': 303} ane=63.21dB pass=True
+[23:01:13] [marigold_vae_decoder] frame_00: dyn_psnr=55.04dB max_abs=3.589e-02
+[23:01:13] [marigold_vae_decoder] frame_19: dyn_psnr=57.16dB max_abs=5.469e-02
+[23:01:18] [marigold_vae_decoder] fwd=0.1266s plan={'const_or_no_usage': 586, 'MLGPUComputeDevice': 403} ane=52.24dB pass=True
+[23:01:18] done pass=True
